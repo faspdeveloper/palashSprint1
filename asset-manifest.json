@@ -5,18 +5,18 @@
     "main.js.map": "/palashSprint1/static/js/main.455f2164.chunk.js.map",
     "runtime-main.js": "/palashSprint1/static/js/runtime-main.68709639.js",
     "runtime-main.js.map": "/palashSprint1/static/js/runtime-main.68709639.js.map",
-    "static/js/2.2cea7fba.chunk.js": "/palashSprint1/static/js/2.2cea7fba.chunk.js",
-    "static/js/2.2cea7fba.chunk.js.map": "/palashSprint1/static/js/2.2cea7fba.chunk.js.map",
+    "static/js/2.c29dc7f5.chunk.js": "/palashSprint1/static/js/2.c29dc7f5.chunk.js",
+    "static/js/2.c29dc7f5.chunk.js.map": "/palashSprint1/static/js/2.c29dc7f5.chunk.js.map",
     "index.html": "/palashSprint1/index.html",
-    "precache-manifest.dcac04cdb77d88c4e376b4d304bfed7d.js": "/palashSprint1/precache-manifest.dcac04cdb77d88c4e376b4d304bfed7d.js",
+    "precache-manifest.244385f9d450daa93517be329967217b.js": "/palashSprint1/precache-manifest.244385f9d450daa93517be329967217b.js",
     "service-worker.js": "/palashSprint1/service-worker.js",
     "static/css/main.02c86b7a.chunk.css.map": "/palashSprint1/static/css/main.02c86b7a.chunk.css.map",
-    "static/js/2.2cea7fba.chunk.js.LICENSE": "/palashSprint1/static/js/2.2cea7fba.chunk.js.LICENSE",
+    "static/js/2.c29dc7f5.chunk.js.LICENSE": "/palashSprint1/static/js/2.c29dc7f5.chunk.js.LICENSE",
     "static/media/bootstrap.min.css": "/palashSprint1/static/media/glyphicons-halflings-regular.ff423a42.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.68709639.js",
-    "static/js/2.2cea7fba.chunk.js",
+    "static/js/2.c29dc7f5.chunk.js",
     "static/css/main.02c86b7a.chunk.css",
     "static/js/main.455f2164.chunk.js"
   ]
