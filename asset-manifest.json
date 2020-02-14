@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/palashSprint1/static/css/main.02c86b7a.chunk.css",
-    "main.js": "/palashSprint1/static/js/main.5f32c6f4.chunk.js",
-    "main.js.map": "/palashSprint1/static/js/main.5f32c6f4.chunk.js.map",
+    "main.js": "/palashSprint1/static/js/main.aac434fc.chunk.js",
+    "main.js.map": "/palashSprint1/static/js/main.aac434fc.chunk.js.map",
     "runtime-main.js": "/palashSprint1/static/js/runtime-main.68709639.js",
     "runtime-main.js.map": "/palashSprint1/static/js/runtime-main.68709639.js.map",
     "static/js/2.2cea7fba.chunk.js": "/palashSprint1/static/js/2.2cea7fba.chunk.js",
     "static/js/2.2cea7fba.chunk.js.map": "/palashSprint1/static/js/2.2cea7fba.chunk.js.map",
     "index.html": "/palashSprint1/index.html",
-    "precache-manifest.c74ad4a9bb43e2cfe0699ab50233b8e4.js": "/palashSprint1/precache-manifest.c74ad4a9bb43e2cfe0699ab50233b8e4.js",
+    "precache-manifest.34b8eaf688147e4c0d6744d35543cd29.js": "/palashSprint1/precache-manifest.34b8eaf688147e4c0d6744d35543cd29.js",
     "service-worker.js": "/palashSprint1/service-worker.js",
     "static/css/main.02c86b7a.chunk.css.map": "/palashSprint1/static/css/main.02c86b7a.chunk.css.map",
     "static/js/2.2cea7fba.chunk.js.LICENSE": "/palashSprint1/static/js/2.2cea7fba.chunk.js.LICENSE",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.68709639.js",
     "static/js/2.2cea7fba.chunk.js",
     "static/css/main.02c86b7a.chunk.css",
-    "static/js/main.5f32c6f4.chunk.js"
+    "static/js/main.aac434fc.chunk.js"
   ]
 }
