@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "067ff3e6594d45e7d469821b7e26af0b",
+    "revision": "4c3c3aed095dae633243a4676cb42cf1",
     "url": "/palashSprint1/index.html"
   },
   {
-    "revision": "ef397a0052fec3cb5215",
+    "revision": "d9f07e8e0ae582ac7d2a",
     "url": "/palashSprint1/static/css/main.02c86b7a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/palashSprint1/static/js/2.ac138660.chunk.js.LICENSE"
   },
   {
-    "revision": "ef397a0052fec3cb5215",
-    "url": "/palashSprint1/static/js/main.19c88420.chunk.js"
+    "revision": "d9f07e8e0ae582ac7d2a",
+    "url": "/palashSprint1/static/js/main.6f39c69f.chunk.js"
   },
   {
     "revision": "d5d1df7f508e7122dc4e",
