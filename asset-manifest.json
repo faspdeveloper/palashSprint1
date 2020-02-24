@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/palashSprint1/static/css/main.d1f22bba.chunk.css",
-    "main.js": "/palashSprint1/static/js/main.419287f7.chunk.js",
-    "main.js.map": "/palashSprint1/static/js/main.419287f7.chunk.js.map",
-    "runtime-main.js": "/palashSprint1/static/js/runtime-main.68709639.js",
-    "runtime-main.js.map": "/palashSprint1/static/js/runtime-main.68709639.js.map",
-    "static/js/2.988ba31f.chunk.js": "/palashSprint1/static/js/2.988ba31f.chunk.js",
-    "static/js/2.988ba31f.chunk.js.map": "/palashSprint1/static/js/2.988ba31f.chunk.js.map",
-    "index.html": "/palashSprint1/index.html",
-    "precache-manifest.e92e9fcf6247fc53f48cb35b2e4e544e.js": "/palashSprint1/precache-manifest.e92e9fcf6247fc53f48cb35b2e4e544e.js",
-    "service-worker.js": "/palashSprint1/service-worker.js",
-    "static/css/main.d1f22bba.chunk.css.map": "/palashSprint1/static/css/main.d1f22bba.chunk.css.map",
-    "static/js/2.988ba31f.chunk.js.LICENSE": "/palashSprint1/static/js/2.988ba31f.chunk.js.LICENSE",
-    "static/media/theme-default.css": "/palashSprint1/static/media/wall_1.17165588.jpg"
+    "main.css": "/fasp-react-js-pwa/static/css/main.5c0b7526.chunk.css",
+    "main.js": "/fasp-react-js-pwa/static/js/main.9c2c3996.chunk.js",
+    "main.js.map": "/fasp-react-js-pwa/static/js/main.9c2c3996.chunk.js.map",
+    "runtime-main.js": "/fasp-react-js-pwa/static/js/runtime-main.2a1a8530.js",
+    "runtime-main.js.map": "/fasp-react-js-pwa/static/js/runtime-main.2a1a8530.js.map",
+    "static/js/2.0a589466.chunk.js": "/fasp-react-js-pwa/static/js/2.0a589466.chunk.js",
+    "static/js/2.0a589466.chunk.js.map": "/fasp-react-js-pwa/static/js/2.0a589466.chunk.js.map",
+    "index.html": "/fasp-react-js-pwa/index.html",
+    "precache-manifest.45ddc9a881d7b854d6e4ef8eb427a730.js": "/fasp-react-js-pwa/precache-manifest.45ddc9a881d7b854d6e4ef8eb427a730.js",
+    "service-worker.js": "/fasp-react-js-pwa/service-worker.js",
+    "static/css/main.5c0b7526.chunk.css.map": "/fasp-react-js-pwa/static/css/main.5c0b7526.chunk.css.map",
+    "static/js/2.0a589466.chunk.js.LICENSE": "/fasp-react-js-pwa/static/js/2.0a589466.chunk.js.LICENSE",
+    "static/media/theme-default.css": "/fasp-react-js-pwa/static/media/wall_1.17165588.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.68709639.js",
-    "static/js/2.988ba31f.chunk.js",
-    "static/css/main.d1f22bba.chunk.css",
-    "static/js/main.419287f7.chunk.js"
+    "static/js/runtime-main.2a1a8530.js",
+    "static/js/2.0a589466.chunk.js",
+    "static/css/main.5c0b7526.chunk.css",
+    "static/js/main.9c2c3996.chunk.js"
   ]
 }
