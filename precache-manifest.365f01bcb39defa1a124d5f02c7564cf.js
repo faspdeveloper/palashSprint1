@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "859034a7850acf7e237f8ab582a5e69c",
+    "revision": "b7690d89f568721078e8226b70113eaa",
     "url": "/fasp-react-js-pwa/index.html"
   },
   {
-    "revision": "45fa6e4a1198d62b36a3",
+    "revision": "15bf18c9239e6d7a23ac",
     "url": "/fasp-react-js-pwa/static/css/main.5c0b7526.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fasp-react-js-pwa/static/js/2.0a589466.chunk.js.LICENSE"
   },
   {
-    "revision": "45fa6e4a1198d62b36a3",
-    "url": "/fasp-react-js-pwa/static/js/main.9c2c3996.chunk.js"
+    "revision": "15bf18c9239e6d7a23ac",
+    "url": "/fasp-react-js-pwa/static/js/main.d83bb8f1.chunk.js"
   },
   {
     "revision": "8b41cb238b021a336f73",
