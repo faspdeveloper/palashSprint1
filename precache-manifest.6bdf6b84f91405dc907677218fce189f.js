@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1dbb7cc00b5a3031f37ca9ac608b8ce9",
+    "revision": "eaf0c4535cf53e30ba86192ec35f0960",
     "url": "/palashSprint1/index.html"
   },
   {
-    "revision": "b5dcc1f1eec3891f139b",
-    "url": "/palashSprint1/static/css/main.bf02c77f.chunk.css"
+    "revision": "3c9aa208fc4ae88b56ec",
+    "url": "/palashSprint1/static/css/main.11be403c.chunk.css"
   },
   {
-    "revision": "c70d586f6fc221737d1a",
-    "url": "/palashSprint1/static/js/2.0a589466.chunk.js"
+    "revision": "52e759bd71d3ed0e709a",
+    "url": "/palashSprint1/static/js/2.8c3969dc.chunk.js"
   },
   {
     "revision": "122b86ecf57a6547fdbbd9deef0cb492",
-    "url": "/palashSprint1/static/js/2.0a589466.chunk.js.LICENSE"
+    "url": "/palashSprint1/static/js/2.8c3969dc.chunk.js.LICENSE"
   },
   {
-    "revision": "b5dcc1f1eec3891f139b",
-    "url": "/palashSprint1/static/js/main.5a81aa13.chunk.js"
+    "revision": "3c9aa208fc4ae88b56ec",
+    "url": "/palashSprint1/static/js/main.1f882dd2.chunk.js"
   },
   {
     "revision": "d5d1df7f508e7122dc4e",
@@ -62,6 +62,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ff423a4251cf2986555523dfe315c42b",
     "url": "/palashSprint1/static/media/glyphicons-halflings-regular.ff423a42.svg"
+  },
+  {
+    "revision": "d505833956ebd4b94d1afab202118b92",
+    "url": "/palashSprint1/static/media/login-screen.d5058339.jpg"
   },
   {
     "revision": "2f50af2c93c75ffb9664b8d1d1aeae6e",
