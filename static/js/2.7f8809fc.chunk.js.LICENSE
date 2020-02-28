@@ -39,17 +39,17 @@
  * @license  MIT
  */
 
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-
 /**
  * @license bcrypt.js (c) 2013 Daniel Wirtz <dcode@dcode.io>
  * Released under the Apache License, Version 2.0
  * see: https://github.com/dcodeIO/bcrypt.js for details
  */
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
 
 /** @license React v16.12.0
  * react.production.min.js
