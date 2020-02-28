@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/palashSprint1/static/css/main.11be403c.chunk.css",
-    "main.js": "/palashSprint1/static/js/main.b575b3d2.chunk.js",
-    "main.js.map": "/palashSprint1/static/js/main.b575b3d2.chunk.js.map",
+    "main.js": "/palashSprint1/static/js/main.3e769498.chunk.js",
+    "main.js.map": "/palashSprint1/static/js/main.3e769498.chunk.js.map",
     "runtime-main.js": "/palashSprint1/static/js/runtime-main.68709639.js",
     "runtime-main.js.map": "/palashSprint1/static/js/runtime-main.68709639.js.map",
     "static/css/2.627926fe.chunk.css": "/palashSprint1/static/css/2.627926fe.chunk.css",
     "static/js/2.7f8809fc.chunk.js": "/palashSprint1/static/js/2.7f8809fc.chunk.js",
     "static/js/2.7f8809fc.chunk.js.map": "/palashSprint1/static/js/2.7f8809fc.chunk.js.map",
     "index.html": "/palashSprint1/index.html",
-    "precache-manifest.0884ce95a5f0ff18bd2f1d84c7ce634c.js": "/palashSprint1/precache-manifest.0884ce95a5f0ff18bd2f1d84c7ce634c.js",
+    "precache-manifest.c835e1916f78a15e79aff0279568740c.js": "/palashSprint1/precache-manifest.c835e1916f78a15e79aff0279568740c.js",
     "service-worker.js": "/palashSprint1/service-worker.js",
     "static/css/2.627926fe.chunk.css.map": "/palashSprint1/static/css/2.627926fe.chunk.css.map",
     "static/css/main.11be403c.chunk.css.map": "/palashSprint1/static/css/main.11be403c.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.627926fe.chunk.css",
     "static/js/2.7f8809fc.chunk.js",
     "static/css/main.11be403c.chunk.css",
-    "static/js/main.b575b3d2.chunk.js"
+    "static/js/main.3e769498.chunk.js"
   ]
 }
