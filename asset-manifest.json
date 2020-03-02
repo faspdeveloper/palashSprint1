@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/palashSprint1/static/css/main.11be403c.chunk.css",
-    "main.js": "/palashSprint1/static/js/main.3e769498.chunk.js",
-    "main.js.map": "/palashSprint1/static/js/main.3e769498.chunk.js.map",
+    "main.css": "/palashSprint1/static/css/main.4eea46b4.chunk.css",
+    "main.js": "/palashSprint1/static/js/main.d365ff59.chunk.js",
+    "main.js.map": "/palashSprint1/static/js/main.d365ff59.chunk.js.map",
     "runtime-main.js": "/palashSprint1/static/js/runtime-main.68709639.js",
     "runtime-main.js.map": "/palashSprint1/static/js/runtime-main.68709639.js.map",
     "static/css/2.627926fe.chunk.css": "/palashSprint1/static/css/2.627926fe.chunk.css",
-    "static/js/2.7f8809fc.chunk.js": "/palashSprint1/static/js/2.7f8809fc.chunk.js",
-    "static/js/2.7f8809fc.chunk.js.map": "/palashSprint1/static/js/2.7f8809fc.chunk.js.map",
+    "static/js/2.053f6bb1.chunk.js": "/palashSprint1/static/js/2.053f6bb1.chunk.js",
+    "static/js/2.053f6bb1.chunk.js.map": "/palashSprint1/static/js/2.053f6bb1.chunk.js.map",
     "index.html": "/palashSprint1/index.html",
-    "precache-manifest.c835e1916f78a15e79aff0279568740c.js": "/palashSprint1/precache-manifest.c835e1916f78a15e79aff0279568740c.js",
+    "precache-manifest.731989f1013d2689192e39621cb5cb4b.js": "/palashSprint1/precache-manifest.731989f1013d2689192e39621cb5cb4b.js",
     "service-worker.js": "/palashSprint1/service-worker.js",
     "static/css/2.627926fe.chunk.css.map": "/palashSprint1/static/css/2.627926fe.chunk.css.map",
-    "static/css/main.11be403c.chunk.css.map": "/palashSprint1/static/css/main.11be403c.chunk.css.map",
-    "static/js/2.7f8809fc.chunk.js.LICENSE": "/palashSprint1/static/js/2.7f8809fc.chunk.js.LICENSE",
+    "static/css/main.4eea46b4.chunk.css.map": "/palashSprint1/static/css/main.4eea46b4.chunk.css.map",
+    "static/js/2.053f6bb1.chunk.js.LICENSE": "/palashSprint1/static/js/2.053f6bb1.chunk.js.LICENSE",
     "static/media/theme-default.css": "/palashSprint1/static/media/wall_1.17165588.jpg",
     "static/media/Customui.css": "/palashSprint1/static/media/login-screen.d5058339.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.68709639.js",
     "static/css/2.627926fe.chunk.css",
-    "static/js/2.7f8809fc.chunk.js",
-    "static/css/main.11be403c.chunk.css",
-    "static/js/main.3e769498.chunk.js"
+    "static/js/2.053f6bb1.chunk.js",
+    "static/css/main.4eea46b4.chunk.css",
+    "static/js/main.d365ff59.chunk.js"
   ]
 }
