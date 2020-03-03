@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "18f1c74befb0b204405873a4dd040c4d",
+    "revision": "2ccf088e2ca405221e745e0a81c53305",
     "url": "/palashSprint1/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/palashSprint1/static/css/2.3564eac7.chunk.css"
   },
   {
-    "revision": "02d2d2e0e89fda050b7c",
+    "revision": "7f2c86036fa7924178fe",
     "url": "/palashSprint1/static/css/main.9b8c0176.chunk.css"
   },
   {
@@ -20,12 +20,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/palashSprint1/static/js/2.b7c609a0.chunk.js.LICENSE"
   },
   {
-    "revision": "02d2d2e0e89fda050b7c",
-    "url": "/palashSprint1/static/js/main.ba72cf34.chunk.js"
+    "revision": "7f2c86036fa7924178fe",
+    "url": "/palashSprint1/static/js/main.5e36cd2f.chunk.js"
   },
   {
     "revision": "8d0a32efa86ea1a05536edead145e905",
-    "url": "/palashSprint1/static/js/main.ba72cf34.chunk.js.LICENSE"
+    "url": "/palashSprint1/static/js/main.5e36cd2f.chunk.js.LICENSE"
   },
   {
     "revision": "d5d1df7f508e7122dc4e",
