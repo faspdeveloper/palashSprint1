@@ -8,25 +8,16 @@ class CountryService {
         );
     }
 
-<<<<<<< HEAD
     getCountryListAll() {
         return axios.get(`${API_URL}/api/getCountryListAll/`, {
         });
     }
     getCountryListActive() {
-=======
-    getCountryListAll(){
-        return axios.get(`${API_URL}/api/getCountryListAll/`, {
-        });
-    }
-    getCountryListActive(){
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         return axios.get(`${API_URL}/api/getCountryListActive/`, {
         });
     }
 
     editCountry(json) {
-<<<<<<< HEAD
         return axios.put(`${API_URL}/api/editCountry/`, json, {}
         );
     }
@@ -40,11 +31,5 @@ class CountryService {
         });
     }
 
-=======
-        return axios.put(`${API_URL}/api/editCountry/`,json,{}
-            );
-        }
-    
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 }
 export default new CountryService();

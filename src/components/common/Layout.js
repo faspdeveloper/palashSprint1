@@ -7,12 +7,9 @@ import PropTypes from 'prop-types';
 import '../../css/bootstrap/bootstrap.min.css';
 import '../../css/theme-default.css';
 import '../../css/custom.css';
-<<<<<<< HEAD
 import '../../Js/plugins/datatables/jquery.dataTables.min.js';
 
 
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 import '../../css/mcustomscrollbar/jquery.mCustomScrollbar.css';
 //import  action from '../../Js/actions.js'
 import '../../App.css'
@@ -46,7 +43,6 @@ import UpdateShipmentStatusComponent from "../shipmentStatus/UpdateShipmentStatu
 import DownloadProgramDataComponent from '../program/DownloadProgramDataComponent';
 import ImportProgramDataComponent from '../program/ImportProgramDataComponent';
 import ExportProgramDataComponent from '../program/ExportProgramDataComponent';
-<<<<<<< HEAD
 import SyncMasterDataComponent from '../masterSync/SyncMasterDataComponent';
 import AddRegionComponent from '../region/AddRegionComponent';
 import EditRegionComponent from '../region/EditRegionComponent';
@@ -80,8 +76,6 @@ import AddFundingSourceComponent from '../fundingSource/AddFundingSourceComponen
 import FundingSourceListComponent from '../fundingSource/FundingSourceListComponent.jsx';
 import UpdateFundingSourceComponent from '../fundingSource/UpdateFundingSourceComponent.jsx';
 
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
 
 class Layout extends React.Component {
@@ -273,7 +267,6 @@ class Layout extends React.Component {
                     />
 
                     <Route 
-<<<<<<< HEAD
                         exact path={`${match.path}syncMasterData/`}
                         render={(props) => <SyncMasterDataComponent {...props} /> }/>
                     />
@@ -284,8 +277,6 @@ class Layout extends React.Component {
                     />
 
                     <Route 
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                         exact path={`${match.path}addCountry`}
                         render={(props) => <AddCountryComponent {...props} /> }/>
                     />
@@ -309,7 +300,6 @@ class Layout extends React.Component {
                         exact path={`${match.path}editShipmentStatus`}
                         render={(props) => <UpdateShipmentStatusComponent {...props} /> }/>
                     />
-<<<<<<< HEAD
                     <Route 
                         exact path={`${match.path}addRegion`}
                         render={(props) => <AddRegionComponent {...props} /> }/>
@@ -446,8 +436,6 @@ class Layout extends React.Component {
                         render={(props) => <UpdateFundingSourceComponent {...props} /> }/>
                     />
                     
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                 </Switch>
                 
               {/*  <IdleTimeOutModal 

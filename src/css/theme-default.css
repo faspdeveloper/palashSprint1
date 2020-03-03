@@ -269,10 +269,6 @@ body.page-container-boxed .page-container {
 }
 .x-navigation {
   background: #1b1e24;
-<<<<<<< HEAD
-=======
-  text-align: left;
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
   /* NAV LIST ELEMENT */
   /* END NAV LIST ELEMENT */
   /* NAV LIST FIRST ELEMENT */
@@ -293,11 +289,7 @@ body.page-container-boxed .page-container {
   display: block;
   width: 100%;
   padding: 0px;
-<<<<<<< HEAD
   margin: 0px;
-=======
-  /*margin: 0px;*/
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
   position: relative;
 }
 .x-navigation li > a {
@@ -742,10 +734,6 @@ body.page-container-boxed .page-container {
 }
 .x-navigation.x-navigation-minimized > li {
   width: 100%;
-<<<<<<< HEAD
-=======
-  text-align: left;
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 }
 .x-navigation.x-navigation-minimized > li > a {
   padding: 15px 10px;
@@ -918,11 +906,7 @@ body.page-container-boxed .page-container {
  font-size: 25px;
  border-bottom: 0px;
  color: #FFF;
-<<<<<<< HEAD
  height: 50px;
-=======
- height: 80px;
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
  text-align: center;
  background: #1caf9a;
 }
@@ -2243,11 +2227,7 @@ input[type=checkbox] {
 }
 .form-control[disabled],
 .form-control[readonly] {
-<<<<<<< HEAD
   color: #CCC;
-=======
-  color: #333;
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 }
 .form-control[disabled]:focus,
 .form-control[readonly]:focus {
@@ -7263,11 +7243,7 @@ li.ext_zip {
     padding-top: 0px;
   }
   .x-navigation {
-<<<<<<< HEAD
     max-height: 50px;
-=======
-    max-height: 80px;
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
     overflow: hidden;
     background: #1b1e24;
   }
