@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-<<<<<<< HEAD
 import '../../Js/plugins/jquery/jquery.min.js'
 import '../../Js/plugins.js';
 import '../../Js/plugins/bootstrap/bootstrap-select';
@@ -23,14 +22,6 @@ import { Online } from "react-detect-offline";
 import UpdateExpiredPasswordComponent from "../home/UpdateExpiredPasswordComponent.jsx";
 import ForgotPasswordComponent from "../home/ForgotPasswordComponent.jsx";
 import ResetPasswordComponent from "../home/ResetPasswordComponent.jsx";
-=======
-import '../../Js/actions';
-import ErrorComponent from "../common/ErrorComponent";
-import LoginComponent from "../home/LoginComponent.jsx";
-import Layout from './Layout.js';
-import UpdateExpiredPasswordComponent from "../home/UpdateExpiredPasswordComponent.jsx";
-import ForgotPasswordComponent from "../home/ForgotPasswordComponent.jsx";
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
 class Sidebar extends Component {
 
@@ -84,11 +75,7 @@ class Sidebar extends Component {
                                         </li>
 
 
-<<<<<<< HEAD
                                         <li><a href="#"><span className=""></span> </a></li>
-=======
-
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
 
                                         <li className="active">
@@ -120,10 +107,7 @@ class Sidebar extends Component {
 
              </ul>
             </li>*/}
-<<<<<<< HEAD
 
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                         <li className="xn-openable">
                                             <a href=""><span className="fa fa-table"></span> <span className="xn-text">Program data</span></a>
                                             <ul>
@@ -135,21 +119,14 @@ class Sidebar extends Component {
 
                                                 <li><a href="../exportProgramData"><span className=""></span> Export</a></li>
                                                 <li><a href="../importProgramData"><span className=""></span> Import</a></li>
-<<<<<<< HEAD
                                                 <li><a href="../syncMasterData"><span className=""></span> Sync Master data</a></li>
                                                 <li><a href="../consumptionDetails"><span className=""></span>Consumption details</a></li>
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
                                             </ul>
                                         </li>
 
-<<<<<<< HEAD
 
                                         {/* <li className="xn-openable">
-=======
-                                        <li className="xn-openable">
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                             <a href="#"><span className="fa fa-file"></span> <span className="xn-text">Admin</span></a>
                                             <ul className="sidebarUl">
 
@@ -212,7 +189,6 @@ class Sidebar extends Component {
                                                     </ul>
                                                 </li>
 
-<<<<<<< HEAD
                                                 <li className="xn-openable">
                                                     <a href="#"><span className="fa fa-clock-o"></span> Region</a>
                                                     <ul>
@@ -418,10 +394,6 @@ class Sidebar extends Component {
                                             </li>
                                         </Online>
 
-=======
-                                            </ul>
-                                        </li>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
                                         {/*   <li className="xn-openable">
              <a href="#"><span className="fa fa-file"></span> <span className="xn-text">Background Data</span></a>
@@ -510,11 +482,7 @@ class Sidebar extends Component {
                                         {/* END SEARCH */}
                                         {/* SIGN OUT */}
                                         <li className="xn-icon-button pull-right">
-<<<<<<< HEAD
                                             <a href="" className="mb-control" data-box="#mb-signout"><span className="fa fa-sign-out"></span></a>
-=======
-                                            <a href="#" className="mb-control" data-box="#mb-signout"><span className="fa fa-sign-out"></span></a>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                         </li>
                                         {/* END SIGN OUT */}
                                         {/* MESSAGES */}
@@ -527,11 +495,7 @@ class Sidebar extends Component {
                                                 <div className="panel-heading">
                                                     <div className="profile">
                                                         <div className="profile-image">
-<<<<<<< HEAD
                                                             <img className="profile-img" src={im} alt="John Doe" >
-=======
-                                                            <img className="profile-img" src="../../img/no-image.jpeg" alt="John Doe" >
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                                             </img></div>
                                                         <div className="profile-data">
                                                             <div className="profile-data-name">XYZ</div>
@@ -550,19 +514,12 @@ class Sidebar extends Component {
 
                                             </div>
                                         </li>
-<<<<<<< HEAD
                                         <Online>
                                             <li class="xn-icon-button pull-right">
                                                 <a href="../changePassword" title="Change Password"><span class="fa fa-key"></span> <span class="xn-text"></span></a>
                                             </li>
                                         </Online>
                                         <li className="xn-icon-button pull-right Langli">
-=======
-                                        <li class="xn-icon-button pull-right">
-       <a href="../changePassword" title="Change Password"><span class="fa fa-key"></span> <span class="xn-text"></span></a>
-   </li>
-                                        <li className="xn-icon-button pull-right">
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                             <a href="#" className="lang-align" ><span className=""> Languages</span> <span className="fa fa-caret-down lang-caret"
                                             ></span></a>
                                             {/*    <div className="informer informer-warning">3</div> */}
