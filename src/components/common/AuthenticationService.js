@@ -4,7 +4,6 @@ import jwt_decode from 'jwt-decode'
 import { API_URL } from '../../Constants.js'
 import CryptoJS from 'crypto-js'
 import { SECRET_KEY } from '../../Constants.js'
-<<<<<<< HEAD
 import bcrypt from 'bcryptjs';
 
 let myDt;
@@ -41,31 +40,6 @@ class AuthenticationService {
         console.log("decryptedCurUser---" + decryptedCurUser);
         let decryptedToken = CryptoJS.AES.decrypt(localStorage.getItem('token-' + decryptedCurUser).toString(), `${SECRET_KEY}`).toString(CryptoJS.enc.Utf8)
         var decoded = jwt_decode(decryptedToken);
-=======
-
-class AuthenticationService {
-
-    isUserLoggedIn() {
-        let user = localStorage.getItem('userId');
-        if (user === null) return false
-        return true
-    }
-    getLoggedInUserId() {
-        let token = localStorage.getItem('token');
-        var decoded = jwt_decode(token);
-        return decoded.userId;
-    }
-
-    getLoggedInUsername() {
-        let token = localStorage.getItem('token');
-        var decoded = jwt_decode(token);
-        return decoded.sub;
-    }
-
-    getLanguageId() {
-        let token = localStorage.getItem('token');
-        var decoded = jwt_decode(token);
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         return decoded.user.language.languageId;
     }
 
@@ -88,11 +62,7 @@ class AuthenticationService {
     checkIfDifferentUserIsLoggedIn(newUsername) {
         console.log("token username---" + newUsername);
         let usernameStored = localStorage.getItem('username');
-<<<<<<< HEAD
         console.log("usernameStored---" + usernameStored);
-=======
-        console.log("usernameStored---"+usernameStored);
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         if (usernameStored !== null && usernameStored !== "") {
             var usernameDecrypted = CryptoJS.AES.decrypt(usernameStored, `${SECRET_KEY}`)
             var originalText = usernameDecrypted.toString(CryptoJS.enc.Utf8);
@@ -111,14 +81,9 @@ class AuthenticationService {
     }
 
     checkIfTokenExpired() {
-<<<<<<< HEAD
         let decryptedCurUser = CryptoJS.AES.decrypt(localStorage.getItem('curUser').toString(), `${SECRET_KEY}`).toString(CryptoJS.enc.Utf8);
         let decryptedToken = CryptoJS.AES.decrypt(localStorage.getItem('token-' + decryptedCurUser).toString(), `${SECRET_KEY}`).toString(CryptoJS.enc.Utf8)
         var decoded = jwt_decode(decryptedToken);
-=======
-        let token = localStorage.getItem('token');
-        var decoded = jwt_decode(token);
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         console.log(decoded);
         let tokenExpiryTime = new Date(decoded.exp * 1000);
         var curDate = new Date();
@@ -135,20 +100,14 @@ class AuthenticationService {
     }
 
     checkSessionTimeOut() {
-<<<<<<< HEAD
         let decryptedCurUser = CryptoJS.AES.decrypt(localStorage.getItem('curUser').toString(), `${SECRET_KEY}`).toString(CryptoJS.enc.Utf8);
         let decryptedToken = CryptoJS.AES.decrypt(localStorage.getItem('token-' + decryptedCurUser).toString(), `${SECRET_KEY}`).toString(CryptoJS.enc.Utf8)
         var decoded = jwt_decode(decryptedToken);
-=======
-        let token = localStorage.getItem('token');
-        var decoded = jwt_decode(token);
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         console.log("decoded---", decoded);
         console.log("Session expires on---" + decoded.user.sessionExpiresOn);
         return decoded.user.sessionExpiresOn;
     }
 
-<<<<<<< HEAD
     // refreshToken() {
     //     let token = localStorage.getItem('token');
     //     console.log("token---" + token);
@@ -166,24 +125,6 @@ class AuthenticationService {
         let decryptedCurUser = CryptoJS.AES.decrypt(localStorage.getItem('curUser').toString(), `${SECRET_KEY}`).toString(CryptoJS.enc.Utf8);
         let decryptedToken = CryptoJS.AES.decrypt(localStorage.getItem('token-' + decryptedCurUser).toString(), `${SECRET_KEY}`).toString(CryptoJS.enc.Utf8)
         let basicAuthHeader = 'Bearer ' + decryptedToken
-=======
-    refreshToken() {
-        let token = localStorage.getItem('token');
-        console.log("token---" + token);
-        this.setupAxiosInterceptors();
-        return axios.get(`${API_URL}/refresh`, {}).then(response => {
-            console.log("response----------------", response)
-        }).catch(
-            error => {
-                console.log("error----------", error);
-            })
-    }
-
-    setupAxiosInterceptors() {
-        //console.log("Inside interceptor setup");
-        let token = localStorage.getItem('token');
-        let basicAuthHeader = 'Bearer ' + token
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         console.log("headers=" + basicAuthHeader);
         axios.interceptors.request.use(
             // if (this.isUserLoggedIn) {
@@ -195,7 +136,6 @@ class AuthenticationService {
         )
 
     }
-<<<<<<< HEAD
     storeTokenInIndexedDb(token, decodedObj) {
         let userObj = {
             token: token,
@@ -364,8 +304,6 @@ class AuthenticationService {
         return userObj;
     }
 
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 }
 
 

@@ -12,10 +12,6 @@ export default class ExportProgramDataComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-<<<<<<< HEAD
-=======
-            programData: {},
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
             programList: [],
             message: ""
         }
@@ -31,7 +27,6 @@ export default class ExportProgramDataComponent extends Component {
             if (!db1.objectStoreNames.contains('programData')) {
                 storeOS = db1.createObjectStore('programData', { keyPath: 'id', autoIncrement: true });
             }
-<<<<<<< HEAD
             if (!db1.objectStoreNames.contains('lastSyncDate')) {
                 storeOS = db1.createObjectStore('lastSyncDate', { keyPath: 'id', autoIncrement: true });
             }
@@ -92,8 +87,6 @@ export default class ExportProgramDataComponent extends Component {
             if (!db1.objectStoreNames.contains('planningUnit')) {
                 storeOS = db1.createObjectStore('planningUnit', { keyPath: 'planningUnitId', autoIncrement: true });
             }
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         };
         openRequest.onsuccess = function (e) {
             db1 = e.target.result;
@@ -107,7 +100,6 @@ export default class ExportProgramDataComponent extends Component {
             getRequest.onsuccess = function (event) {
                 var myResult = [];
                 myResult = getRequest.result;
-<<<<<<< HEAD
                 var userBytes = CryptoJS.AES.decrypt(localStorage.getItem('curUser'), SECRET_KEY);
                 var userId = userBytes.toString(CryptoJS.enc.Utf8);
                 for (var i = 0; i < myResult.length; i++) {
@@ -120,17 +112,6 @@ export default class ExportProgramDataComponent extends Component {
                         }
                         proList[i] = programJson
                     }
-=======
-                for (var i = 0; i < myResult.length; i++) {
-                    var bytes = CryptoJS.AES.decrypt(myResult[i].programData, SECRET_KEY);
-                    var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-                    var json = JSON.parse(plaintext);
-                    var programJson = {
-                        name: json.label.labelEn,
-                        id: json.programId
-                    }
-                    proList[i] = programJson
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                 }
                 this.setState({
                     programList: proList
@@ -172,7 +153,6 @@ export default class ExportProgramDataComponent extends Component {
 
     exportClicked() {
         if ($("#exportForm").valid()) {
-<<<<<<< HEAD
             var zip = new JSZip();
             var selectedPrgArr = $("#programId").val();
             var selectedPrgArrText = $('#programId option:selected').toArray().map(item => item.text);
@@ -281,59 +261,5 @@ export default class ExportProgramDataComponent extends Component {
             }.bind(this)
         }
     }
-=======
-        var zip = new JSZip();
-        var selectedPrgArr = $("#programId").val();
-        var selectedPrgArrText = $('#programId option:selected').toArray().map(item => item.text);
-        var db1;
-        var storeOS;
-        var openRequest = indexedDB.open('fasp', 1);
-        openRequest.onupgradeneeded = function (e) {
-            var db1 = e.target.result;
-            if (!db1.objectStoreNames.contains('programData')) {
-                storeOS = db1.createObjectStore('programData', { keyPath: 'id', autoIncrement: true });
-            }
-        };
-        openRequest.onsuccess = function (e) {
-            db1 = e.target.result;
-            var transaction = db1.transaction(['programData'], 'readwrite');
-            var program = transaction.objectStore('programData');
-            var getRequest = program.getAll();
-            getRequest.onerror = function (event) {
-                // Handle errors!
-            };
-            getRequest.onsuccess = function (event) {
-                var myResult = [];
-                myResult = getRequest.result;
-                for (var i = 0; i < myResult.length; i++) {
-                    for (var j = 0; j < selectedPrgArr.length; j++) {
-                        if (myResult[i].id == selectedPrgArr[j]) {
-                            var txt = JSON.stringify(myResult[i]);
-                            console.log(selectedPrgArrText[i]);
-                            zip.file(selectedPrgArrText[i] + "_" + parseInt(i + 1) + ".txt", txt);
-
-                        }
-                    }
-                    if (i == myResult.length - 1) {
-                        zip.generateAsync({
-                            type: "blob"
-                        }).then(function (content) {
-                            FileSaver.saveAs(content, "download.zip");
-                        });
-                        this.setState({
-                            message: `${DATA_EXPORT_SUCCESS}`
-                        })
-                    }
-                }
-
-
-            }.bind(this);
-        }.bind(this)
-
-    }
-
-    }
-
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 }
 

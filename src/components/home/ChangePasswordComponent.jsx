@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 import $ from 'jquery';
 import '../../Js/validation.js';
 import 'jquery-validation';
@@ -25,10 +21,7 @@ export default class ChangePasswordComponent extends Component {
     }
 
     componentDidMount() {
-<<<<<<< HEAD
         let username = AuthenticationService.getLoggedInUsername();
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         if (!AuthenticationService.checkTypeOfSession()) {
             alert("You can't change your session from online to offline or vice versa.");
             this.props.history.push(`/`)
@@ -43,11 +36,7 @@ export default class ChangePasswordComponent extends Component {
         }, 'The new password does not match.');
 
         $.validator.addMethod('checkOldPassword', function () {
-<<<<<<< HEAD
             if ($('#newPassword').val() == $('#oldPassword').val()) {
-=======
-            if ($('#newPassword').val() === $('#oldPassword').val()) {
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                 console.log("same");
                 return false;
             } else {
@@ -55,7 +44,6 @@ export default class ChangePasswordComponent extends Component {
                 return true;
             }
         }, "The new password can't be same as old password.");
-<<<<<<< HEAD
         $.validator.addMethod('strongPassword', function (value) {
             return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{6,15}$/.test(value);
         }, 'Password does not match with password policy.');
@@ -82,25 +70,6 @@ export default class ChangePasswordComponent extends Component {
                 return false;
             }
         }, 'Password should not be same as username.');
-=======
-
-        // $.validator.addMethod('checkOldPassword', function () {
-        //     let userOff = JSON.parse(localStorage.getItem('user'));
-        //     let val;
-        //     console.log("password---"+$('#oldPassword').val())
-        //     bcrypt.compare($('#oldPassword').val(), userOff.password, function (err, res) {
-        //         console.log("res---"+res);
-        //             val = res; 
-        //     });
-        //     if (val === true) {
-        //         return true;
-        //     } 
-        //     if(val === false) {
-        //         return false;
-        //     }
-        //     // return val;
-        // }, 'Old password is incorrect.');
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         $("#form1").validate({
             ignore: [],
             rules: {
@@ -109,7 +78,6 @@ export default class ChangePasswordComponent extends Component {
                 },
                 newPassword: {
                     required: true,
-<<<<<<< HEAD
                     checkOldPassword: true,
                     notSameAsUsername:true,
                     startsWithLetter: true,
@@ -119,9 +87,6 @@ export default class ChangePasswordComponent extends Component {
                     notContainPasswordString: true,
                     minlength: 6,
                     maxlength: 15
-=======
-                    checkOldPassword:true
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                 },
                 confirmNewPassword: {
                     required: true,
@@ -137,7 +102,6 @@ export default class ChangePasswordComponent extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
 
 
             <div className="page-content-wrap">
@@ -196,18 +160,6 @@ export default class ChangePasswordComponent extends Component {
                         </div>
                     </div>
                 </div>
-=======
-            <div className="login">
-                <form name="form1" id="form1">
-                    <h3>Update Password</h3>
-                    Old password : <input type="password" id="oldPassword" name="oldPassword" /><br></br><br></br>
-                    New password : <input type="password" id="newPassword" name="newPassword" /><br></br><br></br>
-                    Confirm new password : <input type="password" id="confirmNewPassword" name="confirmNewPassword" /><br></br><br></br>
-                    <Online><button type="button" onClick={this.submitClicked}>Submit</button></Online>
-                    <Online><button type="button" onClick={this.cancelClicked}>Cancel</button><br></br><br></br></Online>
-                    <div><h5>{this.state.message}</h5></div>
-                </form>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
             </div>
         )
     }
@@ -215,25 +167,14 @@ export default class ChangePasswordComponent extends Component {
     submitClicked() {
         if ($("#form1").valid()) {
             if (navigator.onLine) {
-<<<<<<< HEAD
                 console.log("userid -----------" + AuthenticationService.getLoggedInUserId())
                 UserService.changePassword(AuthenticationService.getLoggedInUserId(), $('#oldPassword').val(), $('#newPassword').val())
                     .then(response => {
-=======
-                UserService.changePassword(AuthenticationService.getLoggedInUsername(),$('#oldPassword').val(),$('#newPassword').val())
-                    .then(response => {
-                        console.log(response.statusText)
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                         localStorage.setItem('password', CryptoJS.AES.encrypt((response.data.data).toString(), `${SECRET_KEY}`));
                         this.props.history.push(`/welcome/${response.data.message}`)
                     })
                     .catch(
                         error => {
-<<<<<<< HEAD
-=======
-                            console.log(error.message);
-                            console.log(error.text);
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                             switch (error.message) {
                                 case "Network Error":
                                     this.setState({
@@ -249,11 +190,7 @@ export default class ChangePasswordComponent extends Component {
                         }
                     );
             } else {
-<<<<<<< HEAD
                 alert("You must be online to update the password.")
-=======
-                alert("You must be Online to update the password.")
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
             }
         }
     }

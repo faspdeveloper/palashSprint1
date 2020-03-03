@@ -15,20 +15,12 @@ export default class UpdateCountryComponent extends Component {
         this.state = {
             country: {
                 countryId:'',
-<<<<<<< HEAD
                 countryCode:'',
                 label: {
                     label_en: '',
                     // spaLabel: '',
                     // freLabel: '',
                     // porLabel: '', 
-=======
-                label: {
-                    engLabel: '',
-                    spaLabel: '',
-                    freLabel: '',
-                    porLabel: '', 
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                     labelId:''
                 },
                 currency: {
@@ -46,11 +38,8 @@ export default class UpdateCountryComponent extends Component {
 
         this.updateFieldData=this.updateFieldData.bind(this);
         this.updateForm=this.updateForm.bind(this);
-<<<<<<< HEAD
         this.Capitalize=this.Capitalize.bind(this);
         this.cancelClicked=this.cancelClicked.bind(this);
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
     }
 
@@ -105,7 +94,6 @@ export default class UpdateCountryComponent extends Component {
                 $("#updateCountryForm").validate({
                     ignore: [],
                     rules: {
-<<<<<<< HEAD
                         'country.label.label_en': {
                             required: true,
                             lettersonlywhitespace: true,
@@ -126,28 +114,6 @@ export default class UpdateCountryComponent extends Component {
                         //     lettersonly: true,
                         //     maxlength: 255
                         // },
-=======
-                        'country.label.engLabel': {
-                            required: true,
-                            lettersonly: true,
-                            maxlength: 255
-                        },
-                        'country.label.freLabel': {
-        
-                            lettersonly: true,
-                            maxlength: 255
-                        },
-                        'country.label.spaLabel': {
-        
-                            lettersonly: true,
-                            maxlength: 255
-                        },
-                        'country.label.porLabel': {
-        
-                            lettersonly: true,
-                            maxlength: 255
-                        },
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                         'country.currency.currencyId': {
                             required: true
                         }, 
@@ -161,7 +127,6 @@ export default class UpdateCountryComponent extends Component {
                 });
 
     }
-<<<<<<< HEAD
     Capitalize(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
@@ -178,32 +143,13 @@ export default class UpdateCountryComponent extends Component {
         // } if (event.target.name === "country.label.porLabel") {
         //     this.state.country.label.porLabel = event.target.value
         // }
-=======
-    updateFieldData(event){
-        let { country } = this.state
-        if (event.target.name === "country.label.engLabel") {
-           this.state.country.label.engLabel = event.target.value
-        }
-        if (event.target.name === "country.label.freLabel") {
-            this.state.country.label.freLabel = event.target.value
-        } if (event.target.name === "country.label.spaLabel") {
-            this.state.country.label.spaLabel = event.target.value
-        } if (event.target.name === "country.label.porLabel") {
-            this.state.country.label.porLabel = event.target.value
-        }
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         if (event.target.name === "country.currency.currencyId") {
             this.state.country.currency.currencyId = event.target.value
         }if (event.target.name === "country.language.languageId") {
             this.state.country.language.languageId = event.target.value
-<<<<<<< HEAD
         }else if(event.target.name === "country.active") { 
              console.log("hi----");
             this.state.country.active = event.target.id === "country.active2" ? false : true
-=======
-        }else if(event.target.name === "country.active") {
-            this.state.country.active = event.target.id = "country.active2" ? false : true
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         }
         
         this.setState(
@@ -214,12 +160,9 @@ export default class UpdateCountryComponent extends Component {
 
 
     }
-<<<<<<< HEAD
     cancelClicked() {
         this.props.history.push(`/countryList/` + "Action Canceled") 
     }
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
     updateForm(){
         if(navigator.onLine){
@@ -266,11 +209,7 @@ export default class UpdateCountryComponent extends Component {
         let currencyItems = currencyList.length > 0
             && currencyList.map((itemOne, i) => {
                 return (
-<<<<<<< HEAD
                     <option key={i} value={itemOne.currencyId}>{itemOne.label.label_en}</option>
-=======
-                    <option key={i} value={itemOne.currencyId}>{itemOne.label.engLabel}</option>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                 )
             }, this);
 
@@ -281,7 +220,6 @@ export default class UpdateCountryComponent extends Component {
                 <form name="updateCountryForm" id="updateCountryForm">
                     <div>
                         <label>{myConst.COUNTRY_NAME_EN}:-</label>
-<<<<<<< HEAD
                         <input type="text" name="country.label.engLabel" value={this.Capitalize(this.state.country.label.label_en)} onChange={this.updateFieldData} />
                     </div>
                     <br /><br />
@@ -291,12 +229,6 @@ export default class UpdateCountryComponent extends Component {
                     </div>
                     <br /><br />
                     {/* <div>
-=======
-                        <input type="text" name="country.label.engLabel" value={this.state.country.label.engLabel} onChange={this.updateFieldData} />
-                    </div>
-                    <br /><br />
-                    <div>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                         <label>{myConst.COUNTRY_NAME_FR}:-</label>
                         <input type="text" name="country.label.freLabel" value={this.state.country.label.freLabel} onChange={this.updateFieldData} />
                     </div>
@@ -310,11 +242,7 @@ export default class UpdateCountryComponent extends Component {
                         <label>{myConst.COUNTRY_NAME_PO}:-</label>
                         <input type="text" name="country.label.porLabel" value={this.state.country.label.porLabel} onChange={this.updateFieldData} />
                     </div>
-<<<<<<< HEAD
                     <br /><br /> */}
-=======
-                    <br /><br />
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                     <div>
                         {myConst.ACTIVE}:
         <input type="radio" id="country.active1" name="country.active" value={true} checked={this.state.country.active === true} onChange={this.updateFieldData} /> Active
@@ -338,13 +266,9 @@ export default class UpdateCountryComponent extends Component {
                     {/* <input type="hidden" name="dataSource.dataSourceId" value={this.state.dataSource.dataSourceId} /> */}
                     {/* <input type="hidden" name="dataSource.label.labelId" value={this.state.dataSource.label.labelId} /> */}
                     <div>
-<<<<<<< HEAD
 
                         <button type="button" onClick={this.updateForm}>{myConst.UPDATE_BUTTON}</button>
                         <button type="button" onClick={this.cancelClicked}>{myConst.BTN_CANCEL}</button><br></br><br></br>
-=======
-                        <button type="button" onClick={this.updateForm}>{myConst.UPDATE_BUTTON}</button>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                     </div>
                 </form>
 

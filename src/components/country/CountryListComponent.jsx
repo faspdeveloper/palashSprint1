@@ -77,10 +77,7 @@ export default class CountryListComponent extends Component {
                                 <th>{myConst.COUNTRY_NAME_FR}</th>
                                 <th>{myConst.COUNTRY_NAME_SP}</th>
                                 <th>{myConst.COUNTRY_NAME_PO}</th>
-<<<<<<< HEAD
                                 <th>{myConst.COUNTRY_CODE}</th>
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                 <th>{myConst.COUNTRY_ACTIVE}</th>
 
                             </tr>
@@ -90,18 +87,11 @@ export default class CountryListComponent extends Component {
                                 this.state.countryList.map(country =>
 
                                     <tr key={country.countryId} onClick={() => this.editCountry(country)}>
-<<<<<<< HEAD
                                         <td>{country.label.label_en}</td>
                                         <td>{country.label.label_fr}</td>
                                         <td>{country.label.label_sp}</td>
                                         <td>{country.label.label_pr}</td>
                                         <td>{country.countryCode}</td>
-=======
-                                        <td>{country.label.engLabel}</td>
-                                        <td>{country.label.freLabel}</td>
-                                        <td>{country.label.spaLabel}</td>
-                                        <td>{country.label.porLabel}</td>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                         <td>
                                         {country.active.toString() == "true" ? "Active" : "Disabled"}
                                         </td>

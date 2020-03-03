@@ -33,7 +33,6 @@ export default class ForgotPasswordComponent extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
 
             <div className="page-content-wrap">
 
@@ -87,17 +86,6 @@ export default class ForgotPasswordComponent extends Component {
 
             
     
-=======
-            <div className="login">
-                <form name="form1" id="form1">
-                    <h3>Forgot Password</h3>
-                    Username : <input type="text" id="username" name="username" /><br></br><br></br>
-                    <Online><button type="button" onClick={this.submitClicked}>Submit</button></Online>
-                    <Online><button type="button" onClick={this.cancelClicked}>Cancel</button><br></br><br></br></Online>
-                    <div><h5>{this.state.message}</h5></div>
-                </form>
-            </div>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         )
     }
 

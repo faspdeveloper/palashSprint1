@@ -24,13 +24,7 @@ export default class UpdateExpiredPasswordComponent extends Component {
 
 
     componentDidMount() {
-<<<<<<< HEAD
         let username = this.state.username;
-=======
-        console.log("username expired page---"+this.props.location.state.username)
-        console.log("mount called for");
-        // AuthenticationService.setupAxiosInterceptors();
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         $.validator.addMethod('checkPassword', function () {
             if ($('#newPassword').val() === $('#confirmNewPassword').val()) {
                 return true;
@@ -38,7 +32,6 @@ export default class UpdateExpiredPasswordComponent extends Component {
                 return false;
             }
         }, 'The New passwords do not match.');
-<<<<<<< HEAD
 
         $.validator.addMethod('checkOldPassword', function () {
             if ($('#newPassword').val() == $('#oldPassword').val()) {
@@ -81,8 +74,6 @@ export default class UpdateExpiredPasswordComponent extends Component {
             }
         }, 'Password should not be same as username.');
 
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         $("#form1").validate({
             ignore: [],
             rules: {
@@ -90,7 +81,6 @@ export default class UpdateExpiredPasswordComponent extends Component {
                     required: true
                 },
                 newPassword: {
-<<<<<<< HEAD
                     required: true,
                     checkOldPassword: true,
                     notSameAsUsername:true,
@@ -101,9 +91,6 @@ export default class UpdateExpiredPasswordComponent extends Component {
                     notContainPasswordString: true,
                     minlength: 6,
                     maxlength: 15
-=======
-                    required: true
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                 },
                 confirmNewPassword: {
                     required: true,
@@ -136,7 +123,6 @@ export default class UpdateExpiredPasswordComponent extends Component {
     submitClicked() {
         if ($("#form1").valid()) {
             if (navigator.onLine) {
-<<<<<<< HEAD
                 UserService.updateExpiredPassword(this.state.username, $('#oldPassword').val(), $('#newPassword').val())
                     .then(response => {
                         var decoded = jwt_decode(response.data.token);
@@ -145,28 +131,10 @@ export default class UpdateExpiredPasswordComponent extends Component {
                         localStorage.setItem('password-' + decoded.userId, CryptoJS.AES.encrypt((decoded.user.password).toString(), `${SECRET_KEY}`));
                         localStorage.setItem('typeOfSession', "Online");
                         localStorage.setItem('curUser', CryptoJS.AES.encrypt((decoded.userId).toString(), `${SECRET_KEY}`));
-=======
-                console.log("state username ---"+this.state.username)
-                UserService.updateExpiredPassword(this.state.username, $('#oldPassword').val(), $('#newPassword').val())
-                    .then(response => {
-                        console.log(response.data.data)
-                        var decoded = jwt_decode(response.data.token);
-                        localStorage.setItem('token', response.data.token);
-                        localStorage.setItem('typeOfSession', "Online");
-                        localStorage.setItem('userId', CryptoJS.AES.encrypt((decoded.userId).toString(), `${SECRET_KEY}`));
-                        localStorage.setItem('username', CryptoJS.AES.encrypt((decoded.sub).toString(), `${SECRET_KEY}`));
-                        localStorage.setItem('password', CryptoJS.AES.encrypt((decoded.user.password).toString(), `${SECRET_KEY}`));
-                        localStorage.setItem('languageId', CryptoJS.AES.encrypt((decoded.user.language.languageId).toString(), `${SECRET_KEY}`));
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                         this.props.history.push(`/welcome/Password updated successfully.`)
                     })
                     .catch(
                         error => {
-<<<<<<< HEAD
-=======
-                            console.log(error.message);
-                            console.log(error.text);
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                             switch (error.message) {
                                 case "Network Error":
                                     this.setState({
@@ -182,11 +150,7 @@ export default class UpdateExpiredPasswordComponent extends Component {
                         }
                     );
             } else {
-<<<<<<< HEAD
                 alert("You must be online to update the password.")
-=======
-                alert("You must be Online to update the password.")
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
             }
         }
     }

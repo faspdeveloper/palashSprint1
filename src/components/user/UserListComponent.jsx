@@ -51,7 +51,6 @@ export default class UserListComponent extends Component {
     render() {
         return (
             <div className="userList">
-<<<<<<< HEAD
                 <div className="page-content-wrap">
                     <div className="row">
                         <div className="">
@@ -117,57 +116,6 @@ export default class UserListComponent extends Component {
                         </div>
                     </div>
                 </div>
-=======
-                <p>{this.props.match.params.message}</p>
-                <h1>{TITLE_USER_LIST}</h1>
-                <div className="container">
-                    <button className="btn btn-add" type="button" style={{ marginLeft: '-999px' }} onClick={this.addNewUser}>{TITLE_ADD_USER}</button><br /><br />
-                    <div className="row">
-                        <div className="col-md-12 scrollable"></div>
-                        <table className="table table-responsive" border="1" align="center">
-                            <thead>
-                                <tr>
-                                    <th>{REALM}</th>
-                                    <th>{USERNAME}</th>
-                                    <th>{EMAIL_ID}</th>
-                                    <th>{PHONE_NO}</th>
-                                    <th>{ROLE}</th>
-                                    <th>{PREFERRED_LANGUAGE}</th>
-                                    <th>{LAST_LOGIN_DATE}</th>
-                                    <th>{FAILED_ATTEMPTS}</th>
-                                    <th>{ACTIVE}</th>
-                                    <th>{BTN_EDIT}</th>
-                                    <th>{BTN_FAILED_ATTEMPTS}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    this.state.userList.map(
-                                        user =>
-                                            // <tr key={user.userId} onClick={() => this.editUser(user.userId)}>
-                                            <tr key={user.userId} onClick={() => this.editUser(user)}>
-                                                <td>
-                                                    {user.realm.label.engLabel}
-                                                </td>
-                                                <td>{user.username}</td>
-                                                <td>{user.emailId}</td>
-                                                <td>{user.phoneNumber}</td>
-                                                <td>{user.role.label.engLabel}</td>
-                                                <td>{user.language.languageName}</td>
-                                                <td>{user.lastLoginDate !== null && user.lastLoginDate !== "" ? moment(user.lastLoginDate).format('MM-DD-YYYY hh:mm A'):""}</td>
-                                                <td>{user.faildAttempts}</td>
-                                                <td>{user.active.toString() === "true" ? "Active" : "Disabled"}
-                                                </td>
-                                                <td><button type="button" onClick={() => this.editUser(user)}>{BTN_EDIT}</button></td>
-                                                <td><button type="button" onClick={(e) => { e.stopPropagation(); this.unlockAccount(user.userId, user.emailId) }}>{BTN_FAILED_ATTEMPTS}</button></td>
-                                            </tr>
-                                    )
-                                }
-                            </tbody>
-                        </table></div>
-                </div>
-
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
             </div>
         )
     }

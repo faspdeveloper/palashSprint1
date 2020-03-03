@@ -244,11 +244,7 @@ export default class AddRoleComponent extends Component {
                                             <div class="form-group">
                                                 <label class="req col-md-2 col-xs-12 control-label">{labels.BUSINESS_FUNCTION}</label>
                                                 <div class="col-md-6 col-xs-12">
-<<<<<<< HEAD
                                                     <select id="role.businessFunctions" class="form-control" data-live-search="true" data-actions-box="true" name="role.businessFunctions" multiple={true} value={this.state.role.businessFunctions} onChange={this.dataChange} placeholder="Please select business function">
-=======
-                                                    <select id="role.businessFunctions" class="form-control select" data-live-search="true" data-actions-box="true" name="role.businessFunctions" multiple={true} value={this.state.role.businessFunctions} onChange={this.dataChange} placeholder="Please select business function">
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                                         <option value="">-Nothing Selected-</option>
                                                         {businessFunctionsList}
                                                     </select>
@@ -259,11 +255,7 @@ export default class AddRoleComponent extends Component {
                                             <div class="form-group">
                                                 <label class="req col-md-2 col-xs-12 control-label">{labels.CAN_CREATE_ROLE}</label>
                                                 <div class="col-md-6 col-xs-12">
-<<<<<<< HEAD
                                                     <select id="role.canCreateRole" className="form-control" data-live-search="true" data-actions-box="true" name="role.canCreateRole" multiple={true} value={this.state.role.canCreateRole} onChange={this.dataChange}>
-=======
-                                                    <select id="role.canCreateRole" className="form-control select" data-live-search="true" data-actions-box="true" name="role.canCreateRole" multiple={true} value={this.state.role.canCreateRole} onChange={this.dataChange}>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                                         <option value="">-Nothing Selected-</option>
                                                         {roleList}
                                                     </select>

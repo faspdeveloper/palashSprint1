@@ -12,19 +12,12 @@ export default class EditLanguageComponent extends Component {
     constructor(props) {
 
         super(props);
-<<<<<<< HEAD
         this.state = { language: {languageName:''}, message:'' }
 
         this.updateFieldData = this.updateFieldData.bind(this);
         this.updateForm = this.updateForm.bind(this);
         this.Capitalize=this.Capitalize.bind(this);
        
-=======
-        this.state = { language: '' }
-
-        this.updateFieldData = this.updateFieldData.bind(this);
-        this.updateForm = this.updateForm.bind(this);
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
     }
     componentDidMount() {
        AuthenticationService.setupAxiosInterceptors();
@@ -64,12 +57,9 @@ export default class EditLanguageComponent extends Component {
             }
         );
     }
-<<<<<<< HEAD
     Capitalize(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
     updateForm() {
         if (navigator.onLine) {
@@ -84,20 +74,12 @@ export default class EditLanguageComponent extends Component {
                             switch (error.message) {
                                 case "Network Error":
                                     this.setState({
-<<<<<<< HEAD
                                         message: error.response.data
-=======
-                                        message: error.message
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                     })
                                     break
                                 default:
                                     this.setState({
-<<<<<<< HEAD
                                         message: error.response.data.message
-=======
-                                        message: error.message
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                     })
                                     break
                             }
@@ -116,11 +98,7 @@ export default class EditLanguageComponent extends Component {
                 <form name="updatyeLanguageForm" id="updateLanguageForm">
                     <div>
                         <label>{myConst.LANGUAGE_NAME}:-</label>
-<<<<<<< HEAD
                         <input type="text" name="language.languageName" value={this.Capitalize(this.state.language.languageName)} onChange={this.updateFieldData} />
-=======
-                        <input type="text" name="language.languageName" value={this.state.language.languageName} onChange={this.updateFieldData} />
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                     </div>
                     <br /><br />
                     <div>

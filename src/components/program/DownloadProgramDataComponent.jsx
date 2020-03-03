@@ -1,30 +1,19 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import { BTN_DOWNLOAD, DOWNLOAD_TITLE, DATA_DOWNLOAD_SUCCESS, PROGRAM, OFFLINE_MSG,ACTION_CANCEL,SAME_PROGRAM_OVERWRITE_MESSAGE } from '../../Labels.js';
-=======
-import { BTN_DOWNLOAD, DOWNLOAD_TITLE, DATA_DOWNLOAD_SUCCESS, PROGRAM } from '../../Labels.js';
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 import ProgramService from '../../api/ProgramService.js';
 import CryptoJS from 'crypto-js';
 import { SECRET_KEY } from '../../Constants.js'
 import AuthenticationService from '../common/AuthenticationService.js';
 import $ from 'jquery';
 import 'jquery-validation';
-<<<<<<< HEAD
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
 export default class DownloadProgramDataComponent extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-<<<<<<< HEAD
-=======
-            programData: {},
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
             programList: [],
             message: ""
         }
@@ -71,11 +60,7 @@ export default class DownloadProgramDataComponent extends Component {
         let programItems = programList.length > 0
             && programList.map((item, i) => {
                 return (
-<<<<<<< HEAD
                     <option key={i} value={item.programId}>{item.label.label_en}</option>
-=======
-                    <option key={i} value={item.programId}>{item.label.engLabel}</option>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                 )
             }, this);
         return (
@@ -95,7 +80,6 @@ export default class DownloadProgramDataComponent extends Component {
     downloadClicked() {
         if (navigator.onLine) {
             if ($("#downloadForm").valid()) {
-<<<<<<< HEAD
                 confirmAlert({
                     title: 'Confirm to submit',
                     message: `${SAME_PROGRAM_OVERWRITE_MESSAGE}`,
@@ -241,67 +225,6 @@ export default class DownloadProgramDataComponent extends Component {
             }
         } else {
             alert(`${OFFLINE_MSG}`);
-=======
-                var programArr = $("#programId").val();
-                for (var j = 0; j < programArr.length; j++) {
-                    AuthenticationService.setupAxiosInterceptors();
-                    ProgramService.getProgramData(programArr[j])
-                        .then(response => {
-                            var json = response.data;
-                            var db1;
-                            var storeOS;
-                            var openRequest = indexedDB.open('fasp', 1);
-                            openRequest.onupgradeneeded = function (e) {
-                                var db1 = e.target.result;
-                                if (!db1.objectStoreNames.contains('programData')) {
-                                    storeOS = db1.createObjectStore('programData', { keyPath: 'id', autoIncrement: true });
-                                }
-                            };
-                            openRequest.onsuccess = function (e) {
-                                db1 = e.target.result;
-                                var transaction = db1.transaction(['programData'], 'readwrite');
-                                var program = transaction.objectStore('programData');
-                                for (var i = 0; i < json.length; i++) {
-                                    var encryptedText = CryptoJS.AES.encrypt(JSON.stringify(json[i]), SECRET_KEY);
-                                    var item = {
-                                        id: json[i].programId,
-                                        programData: encryptedText.toString()
-                                    };
-
-                                    var getRequest = program.put(item);
-
-                                    getRequest.onerror = function (event) {
-                                        // Handle errors!
-                                    };
-                                    getRequest.onsuccess = function (event) {
-                                        this.setState({
-                                            message: `${DATA_DOWNLOAD_SUCCESS}`
-                                        })
-                                    }.bind(this);
-                                }
-                            }.bind(this)
-                        })
-                        .catch(
-                            error => {
-                                switch (error.message) {
-                                    case "Network Error":
-                                        this.setState({
-                                            message: error.message
-                                        })
-                                        break
-                                    default:
-                                        this.setState({
-                                            message: error.response.data.message
-                                        })
-                                        break
-                                }
-                            }
-                        );
-                }
-            }
-        } else {
-            alert("To perform this action you must be online.");
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         }
     }
 

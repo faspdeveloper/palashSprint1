@@ -11,19 +11,12 @@ class AddLanguageComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-<<<<<<< HEAD
             languageName: '',
             message: ''
         }
         this.updateFieldData = this.updateFieldData.bind(this);
         this.submitForm = this.submitForm.bind(this);
         this.Capitalize=this.Capitalize.bind(this);
-=======
-            languageName: ''
-        }
-        this.updateFieldData = this.updateFieldData.bind(this);
-        this.submitForm = this.submitForm.bind(this);
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
     }
     updateFieldData(event) {
         this.setState(
@@ -50,19 +43,12 @@ class AddLanguageComponent extends Component {
         });
 
     }
-<<<<<<< HEAD
     Capitalize(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
     submitForm(event) {
         if (navigator.onLine) {
-=======
-
-    submitForm(event) {
-        if (navigator.onLine) {
-            console.log("user in online-----");
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
             if ($("#languageForm").valid()) {
                 LanguageService.addLanguage(this.state).then(response => {
                     this.props.history.push(`/languageList/${response.data.message}`)
@@ -92,7 +78,6 @@ class AddLanguageComponent extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
 <>
             
                 {/* <h3>{myConst.ADD_LANGUAGE}</h3>
@@ -150,21 +135,6 @@ class AddLanguageComponent extends Component {
             </div>
         </div>
         </>
-=======
-            <>
-                <h3>{myConst.ADD_LANGUAGE}</h3>
-                <form name="languageForm" id="languageForm">
-                    <div>
-                        <label>{myConst.LANGUAGE_NAME}:-</label>
-                        <input type="text" name="languageName" value={this.state.languageName} onChange={this.updateFieldData} />
-                    </div>
-                    <br /><br />
-                    <div>
-                        <button type="button" onClick={this.submitForm}>{myConst.SUBMIT_BUTTON}</button>
-                    </div>
-                </form>
-            </>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         );
     }
 }

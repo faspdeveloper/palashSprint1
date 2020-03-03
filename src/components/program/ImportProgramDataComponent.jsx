@@ -1,29 +1,18 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import { IMPORT_TITLE, BTN_IMPORT, DATA_IMPORT_SUCCESS, IMPORT_PROGRAM, BTN_SUBMIT, SELECT_FILE, SELECT_ZIP_FILE,ACTION_CANCEL,SAME_PROGRAM_OVERWRITE_MESSAGE  } from '../../Labels.js';
-=======
-import { IMPORT_TITLE, BTN_IMPORT, DATA_IMPORT_SUCCESS, IMPORT_PROGRAM, BTN_SUBMIT } from '../../Labels.js';
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 import { SECRET_KEY } from '../../Constants.js';
 import JSZip from 'jszip';
 import CryptoJS from 'crypto-js';
 import $ from 'jquery';
 import 'jquery-validation';
-<<<<<<< HEAD
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
 export default class ImportProgramDataComponent extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-<<<<<<< HEAD
-=======
-            programData: {},
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
             message: "",
             programList: []
         }
@@ -73,7 +62,6 @@ export default class ImportProgramDataComponent extends Component {
     }
 
     importClicked() {
-<<<<<<< HEAD
         if (window.File && window.FileReader && window.FileList && window.Blob) {
             if (document.querySelector('input[type=file]').files[0] == undefined) {
                 alert(`${SELECT_FILE}`);
@@ -116,45 +104,6 @@ export default class ImportProgramDataComponent extends Component {
                 } else {
                     alert(`${SELECT_ZIP_FILE}`)
                 }
-=======
-        var importObjectDataFromFile = {};
-        if (window.File && window.FileReader && window.FileList && window.Blob) {
-            if (document.querySelector('input[type=file]').files[0] == undefined) {
-                alert("Please select a file");
-            } else {
-                var file = document.querySelector('input[type=file]').files[0];
-                JSZip.loadAsync(file).then(function (zip) {
-                    var i = 0;
-                    var fileName = []
-                    var size = 0;
-                    Object.keys(zip.files).forEach(function (filename) {
-                        size++;
-                    })
-                    Object.keys(zip.files).forEach(function (filename) {
-                        zip.files[filename].async('string').then(function (fileData) {
-                            i++;
-                            var programDataJson = JSON.parse(fileData);
-                            var bytes = CryptoJS.AES.decrypt(programDataJson.programData, SECRET_KEY);
-                            var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-                            var programDataJsonDecrypted = JSON.parse(plaintext);
-                            fileName[i] = {
-                                id: filename,
-                                name: programDataJsonDecrypted.label.labelEn
-                            }
-                            if (i === size) {
-                                this.setState({
-                                    programList: fileName
-                                })
-
-                                $("#programDiv").show();
-                                $("#importDiv").hide();
-                            }
-                        }.bind(this))
-
-                    }.bind(this))
-
-                }.bind(this))
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
             }
 
         }
@@ -163,7 +112,6 @@ export default class ImportProgramDataComponent extends Component {
 
     programSubmitClicked() {
         if ($("#importForm").valid()) {
-<<<<<<< HEAD
             if (window.File && window.FileReader && window.FileList && window.Blob) {
                 if (document.querySelector('input[type=file]').files[0] == undefined) {
                     alert(`${SELECT_FILE}`);
@@ -294,54 +242,6 @@ export default class ImportProgramDataComponent extends Component {
                             }
                         ]
                     });
-=======
-            var importObjectDataFromFile = {};
-            if (window.File && window.FileReader && window.FileList && window.Blob) {
-                if (document.querySelector('input[type=file]').files[0] == undefined) {
-                    alert("Please select a file");
-                } else {
-                    var file = document.querySelector('input[type=file]').files[0];
-                    var db1;
-                    var storeOS;
-                    var openRequest = indexedDB.open('fasp', 1);
-                    var selectedPrgArr = $("#programId").val();
-                    openRequest.onupgradeneeded = function (e) {
-                        var db1 = e.target.result;
-                        if (!db1.objectStoreNames.contains('programData')) {
-                            storeOS = db1.createObjectStore('programData', { keyPath: 'id', autoIncrement: true });
-                        }
-                    };
-                    openRequest.onsuccess = function (e) {
-                        db1 = e.target.result;
-                        var transaction = db1.transaction(['programData'], 'readwrite');
-                        var program = transaction.objectStore('programData');
-                        JSZip.loadAsync(file).then(function (zip) {
-                            Object.keys(zip.files).forEach(function (filename) {
-
-                                zip.files[filename].async('string').then(function (fileData) {
-                                    for (var j = 0; j < selectedPrgArr.length; j++) {
-                                        if (selectedPrgArr[j] == filename) {
-                                            db1 = e.target.result;
-                                            var transaction2 = db1.transaction(['programData'], 'readwrite');
-                                            var program2 = transaction2.objectStore('programData');
-                                            var addProgramDataRequest = program2.put(JSON.parse(fileData));
-                                            addProgramDataRequest.onerror = function (event) {
-                                            };
-                                            addProgramDataRequest.onsuccess = function (event) {
-                                            };
-                                        }
-
-                                    }
-                                })
-                            })
-                        })
-                        this.setState({
-                            message: `${DATA_IMPORT_SUCCESS}`
-                        })
-                        $("#programDiv").hide();
-                        $("#importDiv").show();
-                    }.bind(this)
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                 }
             }
         }

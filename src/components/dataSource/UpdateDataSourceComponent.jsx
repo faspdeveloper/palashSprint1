@@ -14,7 +14,6 @@ export default class UpdateDataSourceComponent extends Component {
         this.state = {
 
             dataSource: {
-<<<<<<< HEAD
                 message:'',
                 active: '',
                 dataSourceId: '',
@@ -23,15 +22,6 @@ export default class UpdateDataSourceComponent extends Component {
                     // spaLabel: '',
                     // freLabel: '',
                     // porLabel: '',
-=======
-                active: '',
-                dataSourceId: '',
-                label: {
-                    engLabel: '',
-                    spaLabel: '',
-                    freLabel: '',
-                    porLabel: '',
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                     labelId: '',
                 },
                 dataSourceType: {
@@ -42,11 +32,8 @@ export default class UpdateDataSourceComponent extends Component {
         }
         this.updateFieldData = this.updateFieldData.bind(this);
         this.updateForm = this.updateForm.bind(this);
-<<<<<<< HEAD
         this.Capitalize=this.Capitalize.bind(this);
         this.cancelClicked=this.cancelClicked.bind(this);
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
     }
 
 
@@ -82,7 +69,6 @@ export default class UpdateDataSourceComponent extends Component {
         $("#updatyeDataSourceForm").validate({
             ignore: [],
             rules: {
-<<<<<<< HEAD
                 'dataSource.label.label_en': {
                     required: true,
                     lettersonlywhitespace: true,
@@ -103,28 +89,6 @@ export default class UpdateDataSourceComponent extends Component {
                 //     lettersonly: true,
                 //     maxlength: 255
                 // },
-=======
-                'dataSource.label.engLabel': {
-                    required: true,
-                    lettersonly: true,
-                    maxlength: 255
-                },
-                'dataSource.label.freLabel': {
-
-                    lettersonly: true,
-                    maxlength: 255
-                },
-                'dataSource.label.spaLabel': {
-
-                    lettersonly: true,
-                    maxlength: 255
-                },
-                'dataSource.label.porLabel': {
-
-                    lettersonly: true,
-                    maxlength: 255
-                },
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                 'dataSource.dataSourceType.dataSourceTypeId': {
                     required: true
                 }
@@ -139,7 +103,6 @@ export default class UpdateDataSourceComponent extends Component {
 
         let { dataSource } = this.state
 
-<<<<<<< HEAD
         if (event.target.name === "dataSource.label.label_en") {
             // console.log("inside if")
             dataSource.label.label_en = event.target.value
@@ -159,24 +122,6 @@ export default class UpdateDataSourceComponent extends Component {
         } else if (event.target.name === "dataSource.active") {
             //console.log("hi----");
             dataSource.active = event.target.id === "dataSource.active2" ? false : true
-=======
-        if (event.target.name === "dataSource.label.engLabel") {
-            // console.log("inside if")
-            dataSource.label.engLabel = event.target.value
-        } if (event.target.name === "dataSource.label.freLabel") {
-            //onsole.log("inside if")
-            dataSource.label.freLabel = event.target.value
-        } if (event.target.name === "dataSource.label.spaLabel") {
-            //console.log("inside if")
-            dataSource.label.spaLabel = event.target.value
-        } if (event.target.name === "dataSource.label.porLabel") {
-            //console.log("inside if")
-            dataSource.label.porLabel = event.target.value
-        } if (event.target.name === "dataSource.dataSourceType.dataSourceTypeId") {
-            this.state.dataSource.dataSourceType.dataSourceTypeId = event.target.value
-        } else if (event.target.name === "dataSource.active") {
-            dataSource.active = event.target.id = "dataSource.active2" ? false : true
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         }
 
 
@@ -188,15 +133,12 @@ export default class UpdateDataSourceComponent extends Component {
 
 
     }
-<<<<<<< HEAD
     Capitalize(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
     cancelClicked() {
         this.props.history.push(`/dataSourceList/` + "Action Canceled") 
     }
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
     updateForm() {
 
         if (navigator.onLine) {
@@ -235,36 +177,21 @@ export default class UpdateDataSourceComponent extends Component {
         let dataSourceTypes = dataSourceTypeList.length > 0
             && dataSourceTypeList.map((item, i) => {
                 return (
-<<<<<<< HEAD
                     <option key={i} value={item.dataSourceTypeId}>{item.label.label_en}</option>
-=======
-                    <option key={i} value={item.dataSourceTypeId}>{item.label.engLabel}</option>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                 )
             }, this);
         return (
 
             <>
-<<<<<<< HEAD
                 <div><h5>{this.state.message}</h5></div>
-=======
-
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                 <h3>{myConst.UPDATE_DATASOURCE}</h3>
                 <form name="updatyeDataSourceForm" id="updatyeDataSourceForm">
                     <div>
                         <label>{myConst.DATASOURCE_TYPE_NAME_EN}:-</label>
-<<<<<<< HEAD
                         <input type="text" name="dataSource.label.label_en" value={this.Capitalize(this.state.dataSource.label.label_en)} onChange={this.updateFieldData} />
                     </div>
                     <br /><br />
                     {/* <div>
-=======
-                        <input type="text" name="dataSource.label.engLabel" value={this.state.dataSource.label.engLabel} onChange={this.updateFieldData} />
-                    </div>
-                    <br /><br />
-                    <div>
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                         <label>{myConst.DATASOURCE_TYPE_NAME_FR}:-</label>
                         <input type="text" name="dataSource.label.freLabel" value={this.state.dataSource.label.freLabel} onChange={this.updateFieldData} />
                     </div>
@@ -278,11 +205,7 @@ export default class UpdateDataSourceComponent extends Component {
                         <label>{myConst.DATASOURCE_TYPE_NAME_PO}:-</label>
                         <input type="text" name="dataSource.label.porLabel" value={this.state.dataSource.label.porLabel} onChange={this.updateFieldData} />
                     </div>
-<<<<<<< HEAD
                     <br /><br /> */}
-=======
-                    <br /><br />
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                     <div>
                         {myConst.ACTIVE}:
                     <input type="radio" id="dataSource.active1" name="dataSource.active" value={true} checked={this.state.dataSource.active === true} onChange={this.updateFieldData} /> Active
@@ -300,10 +223,7 @@ export default class UpdateDataSourceComponent extends Component {
                     <input type="hidden" name="dataSource.label.labelId" value={this.state.dataSource.label.labelId} />
                     <div>
                         <button type="button" onClick={this.updateForm}>{myConst.UPDATE_BUTTON}</button>
-<<<<<<< HEAD
                         <button type="button" onClick={this.cancelClicked}>{myConst.BTN_CANCEL}</button><br></br><br></br>
-=======
->>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                     </div>
                 </form>
             </>
