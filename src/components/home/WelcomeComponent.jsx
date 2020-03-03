@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import CryptoJS from 'crypto-js'
 import { SECRET_KEY } from '../../Constants.js'
 import bcrypt from 'bcryptjs';
+=======
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
 class WelcomeComponent extends Component {
 
@@ -9,6 +12,7 @@ class WelcomeComponent extends Component {
         super(props);
        {/* this.listUserApproval=this.listUserApproval.bind(this);*/}
     }
+<<<<<<< HEAD
     componentDidMount(){
         console.log("user cur ---"+localStorage.getItem("curUser"));
         console.log("cur user decrypted---",CryptoJS.AES.decrypt(localStorage.getItem('curUser').toString(), `${SECRET_KEY}`).toString(CryptoJS.enc.Utf8));
@@ -41,6 +45,15 @@ class WelcomeComponent extends Component {
             </div>
            
         </div>
+=======
+
+    render() {
+        return (
+            <>
+                <h1>Welcome!!</h1>
+                <p>{this.props.match.params.message}</p>
+            </>
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         );
     }
 

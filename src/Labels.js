@@ -1,5 +1,6 @@
 export const TITLE_ADD_USER = 'Create new user'
 export const TITLE_USER_LIST = 'User List'
+<<<<<<< HEAD
 export const TITLE_EDIT_USER = 'Update user'
 export const TITLE_ADD_ROLE = 'ADD NEW ROLE'
 export const TITLE_ROLE_LIST = 'ROLE LIST'
@@ -16,6 +17,12 @@ export const TITLE_ADD_HEALTH_AREA = 'ADD NEW HEALTH AREA'
 export const TITLE_HEALTH_AREA_LIST = 'HEALTH AREA LIST'
 export const TITLE_EDIT_HEALTH_AREA = 'UPDATE HEALTH AREA'
 
+=======
+export const TITLE_EDIT_USER = 'Update user - '
+export const TITLE_ADD_ROLE = 'ADD NEW ROLE'
+export const TITLE_ROLE_LIST = 'ROLE LIST'
+export const TITLE_EDIT_ROLE = 'UPDATE ROLE'
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 export const USERNAME = 'Username'
 export const EMAIL_ID = 'Email Id'
 export const PHONE_NO = 'Phone No'
@@ -43,10 +50,13 @@ export const ROLE_NAME_ENG = 'Role Name[English]'
 export const ROLE_NAME_SPA = 'Role Name[Spanish]'
 export const ROLE_NAME_FRE = 'Role Name[French]'
 export const ROLE_NAME_POR = 'Role Name[Portuguese]'
+<<<<<<< HEAD
 export const REGION_NAME_ENG = 'Region Name[English]'
 export const ORGANISATION_NAME_ENG = 'Organisation Name[English]'
 export const ORGANISATION_CODE = 'Organisation Code'
 export const HEALTH_AREA_NAME_ENG = 'Health Area Name[English]'
+=======
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 export const ROLE_ID = 'Role Id'
 export const BUSINESS_FUNCTION = 'Business Function'
 export const CAN_CREATE_ROLE = 'Can Create Role'
@@ -122,6 +132,7 @@ export const SHIPMENT_STATUS_LIST='Shipment Status List'
 export const ADD_NEW_SHIPMENT_STATUS='Add New Shipment Status'
 export const SELECT_NEXT_SHIPMENT_STATUS='Select next shipment status'
 
+<<<<<<< HEAD
 export const UNIT_TYPE_NAME_EN = 'Unit type name (English)'
 export const UNIT_TYPE_NAME_FR = 'Unit type name (French)'
 export const UNIT_TYPE_NAME_SP = 'Unit type name (Spanish)'
@@ -217,3 +228,8 @@ export const CONSUMPTION_SAVE_SUCCESS='Consumption data saved successfully.'
 export const CLICK_SAVE_TO_CONTINUE='Please click on save button to continue.'
 
 export const COUNTRY_CODE='Country Code'
+=======
+
+
+
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70

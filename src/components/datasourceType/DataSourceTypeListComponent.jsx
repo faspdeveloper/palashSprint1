@@ -88,10 +88,17 @@ export default class DataSourceListComponent extends Component {
                                 this.state.dataSourceList.map(dataSourceType =>
 
                                     <tr key={dataSourceType.dataSourceTypeId} onClick={() => this.editDataSourceType(dataSourceType)}>
+<<<<<<< HEAD
                                         <td>{dataSourceType.label.label_en}</td>
                                         <td>{dataSourceType.label.label_fr}</td>
                                         <td>{dataSourceType.label.label_sp}</td>
                                         <td>{dataSourceType.label.label_pr}</td>
+=======
+                                        <td>{dataSourceType.label.engLabel}</td>
+                                        <td>{dataSourceType.label.freLabel}</td>
+                                        <td>{dataSourceType.label.spaLabel}</td>
+                                        <td>{dataSourceType.label.porLabel}</td>
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                         <td>{dataSourceType.active.toString() == "true" ? "Active" : "Disabled"}</td>
                                     </tr>
                                 )

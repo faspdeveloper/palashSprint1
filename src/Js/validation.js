@@ -16,6 +16,7 @@ $.validator.addMethod('emailId', function (value, element) {
   $.validator.addMethod( "integer", function( value, element ) {
     return this.optional( element ) || /^-?\d+$/.test( value );
   }, "A positive or negative non-decimal number please" );
+<<<<<<< HEAD
 
   $.validator.addMethod( "lettersonlywhitespace", function( value, element ) {
     return this.optional( element ) || /^[a-zA-Z\s]*$/.test( value );
@@ -33,3 +34,6 @@ $.validator.addMethod('emailId', function (value, element) {
   $.validator.addMethod( "positiveinteger", function( value, element ) {
     return this.optional( element ) || /^[1-9]\d*$/.test( value );
   }, "Positive integer value please" );
+=======
+  
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70

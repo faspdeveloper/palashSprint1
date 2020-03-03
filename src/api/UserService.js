@@ -59,6 +59,7 @@ class UserService {
         });
     }
     updateExpiredPassword(username, oldPassword, newPassword) {
+<<<<<<< HEAD
         console.log("api username---" + username);
         return axios.post(`${API_URL}/api/updateExpiredPassword/`, { username, oldPassword, newPassword }, {});
     }
@@ -76,6 +77,19 @@ class UserService {
     updatePassword(username, token, password) {
         return axios.post(`${API_URL}/api/updatePassword/`, { username, token, password }, {});
     }
+=======
+        console.log("api username---"+username);
+        return axios.post(`${API_URL}/api/updateExpiredPassword/`, { username, oldPassword, newPassword }, {});
+    }
+
+    changePassword(username, oldPassword, newPassword) {
+        console.log("api username---"+username);
+        return axios.post(`${API_URL}/api/changePassword/`, { username, oldPassword, newPassword }, {});
+    } 
+    forgotPassword(username) {
+        return axios.get(`${API_URL}/api/forgotPassword/${username}`, {});
+    }
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 }
 
 export default new UserService()

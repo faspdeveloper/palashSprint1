@@ -3,7 +3,11 @@ import $ from 'jquery';
 import '../../Js/validation.js';
 import 'jquery-validation';
 import UserService from "../../api/UserService";
+<<<<<<< HEAD
 import * as labels from '../../Labels.js'
+=======
+import { EMAIL_ID, PHONE_NO, REALM, ROLE, PREFERRED_LANGUAGE,BTN_SUBMIT, BTN_CANCEL, TITLE_ADD_USER, USERNAME } from '../../Labels.js'
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 import AuthenticationService from '../common/AuthenticationService.js';
 
 
@@ -22,6 +26,10 @@ export default class AddUserComponent extends Component {
     }
 
     componentDidMount() {
+<<<<<<< HEAD
+=======
+        console.log("check---"+AuthenticationService.checkTypeOfSession());
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         if (!AuthenticationService.checkTypeOfSession()) {
             alert("You can't change your session from online to offline or vice versa.");
             this.props.history.push(`/`)
@@ -91,9 +99,12 @@ export default class AddUserComponent extends Component {
                 }
             );
 
+<<<<<<< HEAD
         $.validator.addMethod('strongUsername', function (value) {
             return /^(?=.*[a-zA-Z])[a-zA-Z.-_@]{6,30}$/.test(value);
         }, 'Username does not match with username policy.');
+=======
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
         $("#userForm").validate({
             ignore: [],
             rules: {
@@ -108,6 +119,7 @@ export default class AddUserComponent extends Component {
                 languageId: {
                     required: true
                 },
+<<<<<<< HEAD
                 roles: {
                     required: true
                 },
@@ -123,6 +135,17 @@ export default class AddUserComponent extends Component {
                 } else {
                     error.insertAfter(element);
                 }
+=======
+                roleId: {
+                    required: true
+                },
+                username: {
+                    required: true
+                }
+            },
+            errorPlacement: function (error, element) {
+                error.insertAfter(element);
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
             }
         });
 
@@ -139,10 +162,17 @@ export default class AddUserComponent extends Component {
                     <option key={i} value={item.realmId}>
                         {(() => {
                             switch (this.state.languageId) {
+<<<<<<< HEAD
                                 case 2: return (item.label.label_pr !== null && item.label.label_pr !== "" ? item.label.label_pr : item.label.label_en);
                                 case 3: return (item.label.label_fr !== null && item.label.label_fr !== "" ? item.label.label_fr : item.label.label_en);
                                 case 4: return (item.label.label_sp !== null && item.label.label_sp !== "" ? item.label.label_sp : item.label.label_en);
                                 default: return item.label.label_en;
+=======
+                                case 2: return (item.label.porLabel !== null && item.label.porLabel !== "" ? item.label.porLabel : item.label.engLabel);
+                                case 3: return (item.label.freLabel !== null && item.label.freLabel !== "" ? item.label.freLabel : item.label.engLabel);
+                                case 4: return (item.label.spaLabel !== null && item.label.spaLabel !== "" ? item.label.spaLabel : item.label.engLabel);
+                                default: return item.label.engLabel;
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                             }
                         })()}
                     </option>
@@ -162,10 +192,17 @@ export default class AddUserComponent extends Component {
                     <option key={i} value={item.roleId}>
                         {(() => {
                             switch (this.state.languageId) {
+<<<<<<< HEAD
                                 case 2: return (item.label.label_pr !== null && item.label.label_pr !== "" ? item.label.label_pr : item.label.label_en);
                                 case 3: return (item.label.label_fr !== null && item.label.label_fr !== "" ? item.label.label_fr : item.label.label_en);
                                 case 4: return (item.label.label_sp !== null && item.label.label_sp !== "" ? item.label.label_sp : item.label.label_en);
                                 default: return item.label.label_en;
+=======
+                                case 2: return (item.label.porLabel !== null && item.label.porLabel !== "" ? item.label.porLabel : item.label.engLabel);
+                                case 3: return (item.label.freLabel !== null && item.label.freLabel !== "" ? item.label.freLabel : item.label.engLabel);
+                                case 4: return (item.label.spaLabel !== null && item.label.spaLabel !== "" ? item.label.spaLabel : item.label.engLabel);
+                                default: return item.label.engLabel;
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                             }
                         })()}
                     </option>
@@ -173,6 +210,7 @@ export default class AddUserComponent extends Component {
             }, this);
         return (
             <div className="addUser">
+<<<<<<< HEAD
                 <div className="page-content-wrap">
                     <div className="row">
                         <div className="">
@@ -274,6 +312,93 @@ export default class AddUserComponent extends Component {
                         },
                         countryIds: $("#countryIds").val()
                     }
+=======
+                        <div className="page-content-wrap">
+                        
+                            <div className="row">
+                                <div className="col-md-offset-3 col-md-6" style={{ margin: '40px', border: '5px solid black' }} >
+                                <div><h5>{this.state.message}</h5></div>
+                                    <form name="userForm" id="userForm">
+                                        <div className="panel panel-default" style={{ background: '#ffffffad' }}>
+                                            <div className="panel-heading"> <h3>{TITLE_ADD_USER}</h3> </div>
+                                            <div className="col-md-offset-1 panel-body">
+                                                <div className="form-group">
+                                                    <label className="req col-md-3 col-xs-12 control-label"> {REALM}</label>
+                                                    <div className="col-md-6 col-xs-12">
+                                                        <select className="form-control select" id="realmId" name="realmId">
+                                                            <option value="">-Nothing Selected-</option>
+                                                            {realmList}
+                                                        </select>
+                                                    </div>
+                                                </div><br />
+                                                <div className="form-group">
+                                                    <label className="req col-md-3 col-xs-12 control-label">{USERNAME} </label>
+                                                    <div className="col-md-6 col-xs-12"> <input className="form-control" type="text" id="username" name="username" />
+                                                    </div>
+                                                </div><br />
+                                                <div className="form-group">
+                                                    <label className="req col-md-3 col-xs-12 control-label">{EMAIL_ID} </label>
+                                                    <div className="col-md-6 col-xs-12">
+                                                        <input className="form-control" type="text" id="emailId" name="emailId" />
+                                                    </div>
+                                                </div><br />
+                                                <div className="form-group">
+                                                    <label className="req col-md-3 col-xs-12 control-label">{PHONE_NO}</label>
+                                                    <div className="col-md-6 col-xs-12">
+                                                        <input className="form-control" type="text" id="phoneNumber" name="phoneNumber" maxLength="15" minLength="4" />
+                                                    </div>
+                                                </div><br />
+                                                <div className="form-group">
+                                                    <label className="req col-md-3 col-xs-12 control-label">{ROLE} </label><div className="col-md-6 col-xs-12"> <select className="form-control select" id="roleId" name="roleId">
+                                                        <option value="">-Nothing Selected-</option>
+                                                        {roleList}
+                                                    </select></div>
+                                                </div><br />
+                                                {/* <div className="form-group">
+                                                <label className="req col-md-3 col-xs-12 control-label">{COUNTRY} </label><div className="col-md-6 col-xs-12"> <select className=" form-control mdb-select colorful-select dropdown-primary md-form" id="countryIds" name="countryIds">
+                                                    <option value="">-Nothing Selected-</option>
+                                                    {roleList}
+                                                </select></div>
+                                                </div><br /> */}
+                                                <div className="form-group">
+                                                    <label className="req col-md-3 col-xs-12 control-label">{PREFERRED_LANGUAGE} </label> <div className="col-md-6 col-xs-12"><select className="form-control select" id="languageId" name="languageId">
+                                                        <option value="">-Nothing Selected-</option>
+                                                        {languagesList}
+                                                    </select></div>
+                                                </div><br />
+                                                <div className="form-group">
+                                                    <div className="col-md-6 col-xs-12"><button className="btn btn-success" type="button" onClick={this.submitClicked}>{BTN_SUBMIT}</button>
+                                                        <button className="btn btn-primary" type="button" onClick={this.cancelClicked}>{BTN_CANCEL}</button></div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div></div></div></div>
+        )
+    }
+    submitClicked() {
+        console.log($("#countryIds").val())
+        if (navigator.onLine) {
+            console.log("check---"+AuthenticationService.checkTypeOfSession());
+            if (AuthenticationService.checkTypeOfSession()) {
+                var json = {
+                    username: $("#username").val(),
+                    emailId: $("#emailId").val(),
+                    phoneNumber: $("#phoneNumber").val(),
+                    realm: {
+                        realmId: $("#realmId").val()
+                    },
+                    role: {
+                        roleId: $("#roleId").val()
+                    },
+                    language: {
+                        languageId: $("#languageId").val()
+                    },
+                    countryIds: $("#countryIds").val()
+                }
+                if ($("#userForm").valid()) {
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                     UserService.addNewUser(json)
                         .then(response => {
                             this.props.history.push(`/userList/${response.data.message}`)
@@ -303,7 +428,11 @@ export default class AddUserComponent extends Component {
         }
     }
     cancelClicked() {
+<<<<<<< HEAD
         this.props.history.push(`/userList/Action Canceled`)
+=======
+        this.props.history.push(`/userList/` + "Action Canceled")
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
     }
 
 }

@@ -78,9 +78,13 @@ render() {
                             <th>{myConst.DATASOURCE_NAME_FR}</th>
                             <th>{myConst.DATASOURCE_NAME_SP}</th>
                             <th>{myConst.DATASOURCE_NAME_PO}</th>
+<<<<<<< HEAD
                             <th>{myConst.DATASOURCE_TYPE_NAME_EN}</th>
                             <th>{myConst.DATASOURCE_ACTIVE}</th>
                             
+=======
+                            <th>{myConst.DATASOURCE_ACTIVE}</th>
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
 
                         </tr>
                     </thead>
@@ -89,11 +93,18 @@ render() {
                             this.state.dataSourceList.map(dataSource =>
 
                                 <tr key={dataSource.dataSourceId} onClick={() => this.editDataSource(dataSource)}>
+<<<<<<< HEAD
                                     <td>{dataSource.label.label_en}</td>
                                     <td>{dataSource.label.label_fr}</td>
                                     <td>{dataSource.label.label_sp}</td>
                                     <td>{dataSource.label.label_pr}</td>
                                     <td>{dataSource.dataSourceType.label.label_en}</td>
+=======
+                                    <td>{dataSource.label.engLabel}</td>
+                                    <td>{dataSource.label.freLabel}</td>
+                                    <td>{dataSource.label.spaLabel}</td>
+                                    <td>{dataSource.label.porLabel}</td>
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                     <td>{dataSource.active.toString() == "true" ? "Active" : "Disabled"}</td>
                                 </tr>
                             )

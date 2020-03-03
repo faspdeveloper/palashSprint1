@@ -91,10 +91,17 @@ export default class CurrencyListComponent extends Component {
                                     <tr key={currency.currencyId} onClick={() => this.editCurrency(currency)}>
                                         <td>{currency.currencyCode}</td>
                                         <td>{currency.currencySymbol}</td>
+<<<<<<< HEAD
                                         <td>{currency.label.label_en}</td>
                                         <td>{currency.label.label_fr}</td>
                                         <td>{currency.label.label_sp}</td>
                                         <td>{currency.label.label_pr}</td>
+=======
+                                        <td>{currency.label.engLabel}</td>
+                                        <td>{currency.label.freLabel}</td>
+                                        <td>{currency.label.spaLabel}</td>
+                                        <td>{currency.label.porLabel}</td>
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                         <td>{currency.conversionRateToUsd}</td>
 
                                     </tr>

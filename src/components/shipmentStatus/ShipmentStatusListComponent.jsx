@@ -85,10 +85,17 @@ export default class ShipmentStatusListComponent extends Component {
                                 this.state.shipmentStatusList.map(shipmentStatus =>
 
                                     <tr key={shipmentStatus.shipmentStatusId} onClick={() => this.editShipmentStatus(shipmentStatus)}>
+<<<<<<< HEAD
                                         <td>{shipmentStatus.label.label_en}</td>
                                         <td>{shipmentStatus.label.label_fr}</td>
                                         <td>{shipmentStatus.label.label_sp}</td>
                                         <td>{shipmentStatus.label.label_pr}</td>
+=======
+                                        <td>{shipmentStatus.label.engLabel}</td>
+                                        <td>{shipmentStatus.label.freLabel}</td>
+                                        <td>{shipmentStatus.label.spaLabel}</td>
+                                        <td>{shipmentStatus.label.porLabel}</td>
+>>>>>>> 4b02a829c246df966f6e24b1cf2ce67285c00d70
                                         <td>{shipmentStatus.active.toString() == "true" ? "Active" : "Disabled"}</td>
                                     </tr>
                                 )
