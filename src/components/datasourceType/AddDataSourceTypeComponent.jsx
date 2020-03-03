@@ -11,11 +11,12 @@ export default class AddDataSourceTypeComponent extends Component{
     constructor(props){
         super(props);
         this.state={
-            
+            label_en:''
          }
 
          this.updateFieldData=this.updateFieldData.bind(this);
          this.submitForm=this.submitForm.bind(this);
+         this.Capitalize=this.Capitalize.bind(this);
 
     }
 
@@ -24,26 +25,26 @@ export default class AddDataSourceTypeComponent extends Component{
         $("#dataSourceTypeForm").validate({
             ignore: [],
             rules: {
-                'engLabel': {
+                'label_en': {
                     required: true,
-                    lettersonly: true,
+                    lettersonlywhitespace: true,
                     maxlength: 255
                 },
-                'freLabel': {
+                // 'freLabel': {
                    
-                    lettersonly: true,
-                    maxlength: 255
-                },
-                'spaLabel': {
+                //     lettersonly: true,
+                //     maxlength: 255
+                // },
+                // 'spaLabel': {
                     
-                    lettersonly: true,
-                    maxlength: 255
-                },
-                'porLabel': {
+                //     lettersonly: true,
+                //     maxlength: 255
+                // },
+                // 'porLabel': {
                     
-                    lettersonly: true,
-                    maxlength: 255
-                }
+                //     lettersonly: true,
+                //     maxlength: 255
+                // }
             },
             errorPlacement: function (error, element) {
                 error.insertAfter(element);
@@ -51,6 +52,10 @@ export default class AddDataSourceTypeComponent extends Component{
         });
 
 
+    }
+
+    Capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
     updateFieldData(event){
@@ -104,10 +109,10 @@ render(){
                 <form name="dataSourceTypeForm" id="dataSourceTypeForm">
                     <div>
                         <label>{myConst.DATASOURCE_TYPE_NAME_EN}:-</label>
-                        <input type="text" name="engLabel"  onChange={this.updateFieldData} />
+                        <input type="text" name="label_en" value={this.Capitalize(this.state.label_en)} onChange={this.updateFieldData} />
                     </div>
                     <br/><br/>
-                    <div>
+                    {/* <div>
                         <label>{myConst.DATASOURCE_TYPE_NAME_FR}:-</label>
                         <input type="text" name="freLabel"  onChange={this.updateFieldData} />
                     </div>
@@ -121,7 +126,7 @@ render(){
                         <label>{myConst.DATASOURCE_TYPE_NAME_PO}:-</label>
                         <input type="text" name="porLabel"  onChange={this.updateFieldData} />
                     </div>
-                    <br/><br/>
+                    <br/><br/> */}
                     <div>
                         <button type="button" onClick={this.submitForm}>{myConst.SUBMIT_BUTTON}</button>
                     </div>

@@ -1,3 +1,7 @@
+import $ from 'jquery'
+import jQuery from 'jquery'
+import onresize from 'jquery'
+//import '../Js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'
 $(function() {
 
     var formElements = function(){                
@@ -55,7 +59,7 @@ $(function() {
                         if(!$(this).attr("multiple"))
                             $(this).val("").find("option").removeAttr("selected").prop("selected",false);
                     }else{
-                        $(this).find("option[value="+$(this).val()+"]").attr("selected",true);
+                        $(this).find("option[value='"+$(this).val()+"']").attr("selected",true);
                     }
                 });
             }
@@ -399,7 +403,7 @@ $(function() {
         var uiScroller = function(){
             
             if($(".scroll").length > 0){
-                $(".scroll").mCustomScrollbar({axis:"y", autoHideScrollbar: true, scrollInertia: 20, advanced: {autoScrollOnFocus: false}});
+               // $(".scroll").mCustomScrollBar({axis:"y", autoHideScrollbar: true, scrollInertia: 20, advanced: {autoScrollOnFocus: false}});
             }
             
         }// END Custom Content Scroller

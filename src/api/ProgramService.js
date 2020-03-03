@@ -7,5 +7,10 @@ class ProgramService {
         return axios.get(`${API_URL}/api/getProgramData?programId=${programId}`, {
         });
     }
+
+    getProgramList() {
+        return axios.get(`${API_URL}/api/getProgramList`, {
+        });
+    }
 }
 export default new ProgramService()

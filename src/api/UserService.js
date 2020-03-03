@@ -1,52 +1,80 @@
 import axios from "axios";
-import { API_URL } from '../Constants';
+import { API_URL } from '../Constants.js';
 
 
 class UserService {
     getLanguageList() {
-        return axios.get(`http://localhost:8081/api/getLanguageList`, {
+        return axios.get(`${API_URL}/api/getLanguageList`, {
         });
     }
     getRoleList() {
-        return axios.get(`http://localhost:8081/api/getRoleList`, {
+        return axios.get(`${API_URL}/api/getRoleList`, {
         });
     }
     getBusinessFunctionList() {
-        return axios.get(`http://localhost:8081/api/getBusinessFunctionList`, {
+        return axios.get(`${API_URL}/api/getBusinessFunctionList`, {
         });
     }
     getRealmList() {
-        return axios.get(`http://localhost:8081/api/getRealmList`, {
+        return axios.get(`${API_URL}/api/getRealmList`, {
         });
     }
     addNewUser(json) {
         console.log(json);
         // var jsonString=JSON.stringify(json);
 
-        return axios.put(`http://localhost:8081/api/addNewUser/`, json, {
+        return axios.put(`${API_URL}/api/addNewUser/`, json, {
         });
     }
+    addNewRole(json) {
+        console.log(json);
+        // var jsonString=JSON.stringify(json);
+
+        return axios.put(`${API_URL}/api/addNewRole/`, json, {
+        });
+    }
+
     getUserList() {
-        return axios.get(`http://localhost:8081/api/getUserList`, {
+        return axios.get(`${API_URL}/api/getUserList`, {
         });
     }
     getUserByUserId(userId) {
-        return axios.get(`http://localhost:8081/api/getUserByUserId/${userId}`, {
+        return axios.get(`${API_URL}/api/getUserByUserId/${userId}`, {
         });
     }
     editUser(json) {
-        return axios.put(`http://localhost:8081/api/editUser/`, json, {
+        return axios.put(`${API_URL}/api/editUser/`, json, {
         });
     }
-    unlockAccount(user) {
-        return axios.put(`http://localhost:8081/api/unlockAccount/`, user, {
+
+    editRole(json) {
+        console.log(json);
+        // var jsonString=JSON.stringify(json);
+
+        return axios.put(`${API_URL}/api/editRole/`, json, {
         });
     }
-    updateExpiredPassword(userId, oldPassword, newPassword) {
-        return axios.post(`http://localhost:8081/api/updateExpiredPassword/`, { userId, oldPassword, newPassword }, {});
+    unlockAccount(userId, emailId) {
+        return axios.put(`${API_URL}/api/unlockAccount/${userId}/${emailId}`, {
+        });
+    }
+    updateExpiredPassword(username, oldPassword, newPassword) {
+        console.log("api username---" + username);
+        return axios.post(`${API_URL}/api/updateExpiredPassword/`, { username, oldPassword, newPassword }, {});
+    }
+
+    changePassword(userId, oldPassword, newPassword) {
+        console.log("api username---" + userId);
+        return axios.post(`${API_URL}/api/changePassword/`, { userId, oldPassword, newPassword }, {});
     }
     forgotPassword(username) {
-        return axios.get(`http://localhost:8081/api/forgotPassword/${username}`,{});
+        return axios.get(`${API_URL}/api/forgotPassword/${username}`, {});
+    }
+    confirmForgotPasswordToken(username, token) {
+        return axios.post(`${API_URL}/api/confirmForgotPasswordToken/`, { username, token }, {});
+    }
+    updatePassword(username, token, password) {
+        return axios.post(`${API_URL}/api/updatePassword/`, { username, token, password }, {});
     }
 }
 

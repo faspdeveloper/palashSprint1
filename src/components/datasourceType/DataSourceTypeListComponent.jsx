@@ -64,7 +64,7 @@ export default class DataSourceListComponent extends Component {
         return (
             <>
 
-
+                <p>{this.props.match.params.message}</p>
                 <div>
                     <button type="button" style={{ marginLeft: '-999px' }} onClick={this.addNewDataSourceType}>{myConst.ADD_NEW_DATA_SOURCE_TYPE}</button><br /><br />
                 </div>
@@ -88,11 +88,11 @@ export default class DataSourceListComponent extends Component {
                                 this.state.dataSourceList.map(dataSourceType =>
 
                                     <tr key={dataSourceType.dataSourceTypeId} onClick={() => this.editDataSourceType(dataSourceType)}>
-                                        <td>{dataSourceType.label.engLabel}</td>
-                                        <td>{dataSourceType.label.freLabel}</td>
-                                        <td>{dataSourceType.label.spaLabel}</td>
-                                        <td>{dataSourceType.label.porLabel}</td>
-                                        <td>{dataSourceType.active.toString()}</td>
+                                        <td>{dataSourceType.label.label_en}</td>
+                                        <td>{dataSourceType.label.label_fr}</td>
+                                        <td>{dataSourceType.label.label_sp}</td>
+                                        <td>{dataSourceType.label.label_pr}</td>
+                                        <td>{dataSourceType.active.toString() == "true" ? "Active" : "Disabled"}</td>
                                     </tr>
                                 )
 

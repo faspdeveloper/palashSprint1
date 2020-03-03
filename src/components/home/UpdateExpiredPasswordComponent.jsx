@@ -6,8 +6,8 @@ import UserService from '../../api/UserService'
 import CryptoJS from 'crypto-js'
 import AuthenticationService from '../common/AuthenticationService.js';
 import { Online } from "react-detect-offline";
-import bcrypt from 'bcryptjs';
 import { SECRET_KEY } from '../../Constants.js'
+import jwt_decode from 'jwt-decode'
 
 
 export default class UpdateExpiredPasswordComponent extends Component {
@@ -15,14 +15,16 @@ export default class UpdateExpiredPasswordComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            message: ""
+            message: "",
+            username: this.props.location.state.username
         }
         this.submitClicked = this.submitClicked.bind(this);
         this.logoutClicked = this.logoutClicked.bind(this);
     }
 
+
     componentDidMount() {
-        AuthenticationService.setupAxiosInterceptors();
+        let username = this.state.username;
         $.validator.addMethod('checkPassword', function () {
             if ($('#newPassword').val() === $('#confirmNewPassword').val()) {
                 return true;
@@ -31,22 +33,47 @@ export default class UpdateExpiredPasswordComponent extends Component {
             }
         }, 'The New passwords do not match.');
 
-        // $.validator.addMethod('checkOldPassword', function () {
-        //     let userOff = JSON.parse(localStorage.getItem('user'));
-        //     let val;
-        //     console.log("password---"+$('#oldPassword').val())
-        //     bcrypt.compare($('#oldPassword').val(), userOff.password, function (err, res) {
-        //         console.log("res---"+res);
-        //             val = res; 
-        //     });
-        //     if (val === true) {
-        //         return true;
-        //     } 
-        //     if(val === false) {
-        //         return false;
-        //     }
-        //     // return val;
-        // }, 'Old password is incorrect.');
+        $.validator.addMethod('checkOldPassword', function () {
+            if ($('#newPassword').val() == $('#oldPassword').val()) {
+                console.log("same");
+                return false;
+            } else {
+                console.log("different");
+                return true;
+            }
+        }, "The new password can't be same as old password.");
+
+        $.validator.addMethod('strongPassword', function (value) {
+            if (username != value) {
+                return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{6,15}$/.test(value);
+            } else {
+                return false;
+            }
+        }, 'Password does not match with password policy.');
+
+        $.validator.addMethod('startsWithLetter', function (value) {
+            return /^[a-zA-Z]/i.test(value);
+        }, 'Password must start with alphabet.');
+        $.validator.addMethod('containsUppercaseLetter', function (value) {
+            return /^(?=.*[A-Z]).*$/.test(value);
+        }, 'Password must contain atleast 1 uppercase alphabet.');
+        $.validator.addMethod('containsDigit', function (value) {
+            return /^(?=.*\d).*$/.test(value);
+        }, 'Password must contain atleast 1 number.');
+        $.validator.addMethod('containsSpecialCharacters', function (value) {
+            return /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(value);
+        }, 'Password must contain atleast 1 special character.');
+        $.validator.addMethod('notContainPasswordString', function (value) {
+            return /^(?!.*password).*$/.test(value);
+        }, 'Password should not contain password string.');
+        $.validator.addMethod('notSameAsUsername', function (value) {
+            if (username != value) {
+                return true;
+            }else{
+                return false;
+            }
+        }, 'Password should not be same as username.');
+
         $("#form1").validate({
             ignore: [],
             rules: {
@@ -54,7 +81,16 @@ export default class UpdateExpiredPasswordComponent extends Component {
                     required: true
                 },
                 newPassword: {
-                    required: true
+                    required: true,
+                    checkOldPassword: true,
+                    notSameAsUsername:true,
+                    startsWithLetter: true,
+                    containsUppercaseLetter: true,
+                    containsDigit: true,
+                    containsSpecialCharacters: true,
+                    notContainPasswordString: true,
+                    minlength: 6,
+                    maxlength: 15
                 },
                 confirmNewPassword: {
                     required: true,
@@ -87,16 +123,18 @@ export default class UpdateExpiredPasswordComponent extends Component {
     submitClicked() {
         if ($("#form1").valid()) {
             if (navigator.onLine) {
-                UserService.updateExpiredPassword(AuthenticationService.getLoggedInUserId(),$('#oldPassword').val(),$('#newPassword').val())
+                UserService.updateExpiredPassword(this.state.username, $('#oldPassword').val(), $('#newPassword').val())
                     .then(response => {
-                        console.log(response.data.data)
-                        localStorage.setItem('password', CryptoJS.AES.encrypt((response.data.data).toString(), `${SECRET_KEY}`));
-                        this.props.history.push(`/welcome/${response.data.message}`)
+                        var decoded = jwt_decode(response.data.token);
+                        localStorage.setItem('token-' + decoded.userId, CryptoJS.AES.encrypt((response.data.token).toString(), `${SECRET_KEY}`));
+                        localStorage.setItem('username-' + decoded.userId, CryptoJS.AES.encrypt((decoded.user.username).toString(), `${SECRET_KEY}`));
+                        localStorage.setItem('password-' + decoded.userId, CryptoJS.AES.encrypt((decoded.user.password).toString(), `${SECRET_KEY}`));
+                        localStorage.setItem('typeOfSession', "Online");
+                        localStorage.setItem('curUser', CryptoJS.AES.encrypt((decoded.userId).toString(), `${SECRET_KEY}`));
+                        this.props.history.push(`/welcome/Password updated successfully.`)
                     })
                     .catch(
                         error => {
-                            console.log(error.message);
-                            console.log(error.text);
                             switch (error.message) {
                                 case "Network Error":
                                     this.setState({
@@ -112,7 +150,7 @@ export default class UpdateExpiredPasswordComponent extends Component {
                         }
                     );
             } else {
-                alert("You must be Online to update the password.")
+                alert("You must be online to update the password.")
             }
         }
     }

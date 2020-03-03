@@ -64,23 +64,23 @@ export default class CurrencyListComponent extends Component {
 
         return (
             <>
-
+                 <p>{this.props.match.params.message}</p>
                 <div>
                     <button type="button" style={{ marginLeft: '-999px' }} onClick={this.addNewCurrency}>{myConst.ADD_NEW_CURRENCY}</button><br /><br />
                 </div>
 
                 <div className="currencyList">
 
-                    <h1>{myConst.DATA_SOURCE_LIST}</h1>
+                    <h1>{myConst.CURRENCY_LIST}</h1>
                     <table border="1" align="center">
                         <thead>
                             <tr>
                                 <th>{myConst.CURRENCY_CODE}</th>
                                 <th>{myConst.CURRENCY_SYMBOL}</th>
-                                <th>{myConst.DATASOURCE_NAME_EN}</th>
-                                <th>{myConst.DATASOURCE_NAME_FR}</th>
-                                <th>{myConst.DATASOURCE_NAME_SP}</th>
-                                <th>{myConst.DATASOURCE_NAME_PO}</th>
+                                <th>{myConst.CURRENCY_NAME_EN}</th>
+                                <th>{myConst.CURRENCY_NAME_FR}</th>
+                                <th>{myConst.CURRENCY_NAME_SP}</th>
+                                <th>{myConst.CURRENCY_NAME_PO}</th>
                                 <th>{myConst.CONVERSIONRATE_TO_USD}</th>
 
                             </tr>
@@ -91,10 +91,10 @@ export default class CurrencyListComponent extends Component {
                                     <tr key={currency.currencyId} onClick={() => this.editCurrency(currency)}>
                                         <td>{currency.currencyCode}</td>
                                         <td>{currency.currencySymbol}</td>
-                                        <td>{currency.label.engLabel}</td>
-                                        <td>{currency.label.freLabel}</td>
-                                        <td>{currency.label.spaLabel}</td>
-                                        <td>{currency.label.porLabel}</td>
+                                        <td>{currency.label.label_en}</td>
+                                        <td>{currency.label.label_fr}</td>
+                                        <td>{currency.label.label_sp}</td>
+                                        <td>{currency.label.label_pr}</td>
                                         <td>{currency.conversionRateToUsd}</td>
 
                                     </tr>

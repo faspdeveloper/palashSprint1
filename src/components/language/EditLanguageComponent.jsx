@@ -12,10 +12,12 @@ export default class EditLanguageComponent extends Component {
     constructor(props) {
 
         super(props);
-        this.state = { language: '' }
+        this.state = { language: {languageName:''}, message:'' }
 
         this.updateFieldData = this.updateFieldData.bind(this);
         this.updateForm = this.updateForm.bind(this);
+        this.Capitalize=this.Capitalize.bind(this);
+       
     }
     componentDidMount() {
        AuthenticationService.setupAxiosInterceptors();
@@ -55,6 +57,9 @@ export default class EditLanguageComponent extends Component {
             }
         );
     }
+    Capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
 
     updateForm() {
         if (navigator.onLine) {
@@ -69,12 +74,12 @@ export default class EditLanguageComponent extends Component {
                             switch (error.message) {
                                 case "Network Error":
                                     this.setState({
-                                        message: error.message
+                                        message: error.response.data
                                     })
                                     break
                                 default:
                                     this.setState({
-                                        message: error.message
+                                        message: error.response.data.message
                                     })
                                     break
                             }
@@ -93,7 +98,7 @@ export default class EditLanguageComponent extends Component {
                 <form name="updatyeLanguageForm" id="updateLanguageForm">
                     <div>
                         <label>{myConst.LANGUAGE_NAME}:-</label>
-                        <input type="text" name="language.languageName" value={this.state.language.languageName} onChange={this.updateFieldData} />
+                        <input type="text" name="language.languageName" value={this.Capitalize(this.state.language.languageName)} onChange={this.updateFieldData} />
                     </div>
                     <br /><br />
                     <div>

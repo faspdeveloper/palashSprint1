@@ -11,6 +11,10 @@ getLanguageList() {
     return axios.get(`${API_URL}/api/getLanguageListAll/`, {
     });
 }
+getLanguageListActive() {
+    return axios.get(`${API_URL}/api/getLanguageList/`, {
+    });
+}
 editLanguage(json) {
     return axios.put(`${API_URL}/api/editLanguage/`, json, {
     });

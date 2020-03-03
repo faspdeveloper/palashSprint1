@@ -1,7 +1,9 @@
+import $ from 'jquery';
+//const $ = window.$;
 $(document).ready(function(){        
     
     /* PROGGRESS START */
-    $.mpb("show",{value: [0,50],speed: 5});        
+    // $.mpb("show",{value: [0,50],speed: 5});        
     /* END PROGGRESS START */
     
     var html_click_avail = true;
@@ -62,38 +64,38 @@ $(document).ready(function(){
     /* END Gallery Items */
 
     // XN PANEL DRAGGING
-    $( ".xn-panel-dragging" ).draggable({
-        containment: ".page-content", handle: ".panel-heading", scroll: false,
-        start: function(event,ui){
-            html_click_avail = false;
-            $(this).addClass("dragged");
-        },
-        stop: function( event, ui ) {
-            $(this).resizable({
-                maxHeight: 400,
-                maxWidth: 600,
-                minHeight: 200,
-                minWidth: 200,
-                helper: "resizable-helper",
-                start: function( event, ui ) {
-                    html_click_avail = false;
-                },
-                stop: function( event, ui ) {
-                    $(this).find(".panel-body").height(ui.size.height - 82);
-                    $(this).find(".scroll").mCustomScrollbar("update");
+    // $( ".xn-panel-dragging" ).draggable({
+    //     containment: ".page-content", handle: ".panel-heading", scroll: false,
+    //     start: function(event,ui){
+    //         html_click_avail = false;
+    //         $(this).addClass("dragged");
+    //     },
+    //     stop: function( event, ui ) {
+    //         $(this).resizable({
+    //             maxHeight: 400,
+    //             maxWidth: 600,
+    //             minHeight: 200,
+    //             minWidth: 200,
+    //             helper: "resizable-helper",
+    //             start: function( event, ui ) {
+    //                 html_click_avail = false;
+    //             },
+    //             stop: function( event, ui ) {
+    //                 $(this).find(".panel-body").height(ui.size.height - 82);
+    //                 $(this).find(".scroll").mCustomScrollbar("update");
                                             
-                    setTimeout(function(){
-                        html_click_avail = true; 
-                    },1000);
+    //                 setTimeout(function(){
+    //                     html_click_avail = true; 
+    //                 },1000);
                                             
-                }
-            })
+    //             }
+    //         })
             
-            setTimeout(function(){
-                html_click_avail = true; 
-            },1000);            
-        }
-    });
+    //         setTimeout(function(){
+    //             html_click_avail = true; 
+    //         },1000);            
+    //     }
+    // });
     // END XN PANEL DRAGGING
     
     /* DROPDOWN TOGGLE */
@@ -253,11 +255,11 @@ $(function(){
     onload();
 
     /* PROGGRESS COMPLETE */
-    $.mpb("update",{value: 100, speed: 5, complete: function(){            
-        $(".mpb").fadeOut(200,function(){
-            $(this).remove();
-        });
-    }});
+    // $.mpb("update",{value: 100, speed: 5, complete: function(){            
+    //     $(".mpb").fadeOut(200,function(){
+    //         $(this).remove();
+    //     });
+    // }});
     /* END PROGGRESS COMPLETE */
 });
 
@@ -453,14 +455,14 @@ function x_navigation_minimize(action){
         $(".page-container").removeClass("page-container-wide");
         $(".page-sidebar .x-navigation").removeClass("x-navigation-minimized");
         $(".x-navigation-minimize").find(".fa").removeClass("fa-indent").addClass("fa-dedent");
-        $(".page-sidebar.scroll").mCustomScrollbar("update");
+     //   $(".page-sidebar.scroll").mCustomScrollbar("update");
     }
     
     if(action == 'close'){
         $(".page-container").addClass("page-container-wide");
         $(".page-sidebar .x-navigation").addClass("x-navigation-minimized");
         $(".x-navigation-minimize").find(".fa").removeClass("fa-dedent").addClass("fa-indent");
-        $(".page-sidebar.scroll").mCustomScrollbar("disable",true);
+        // $(".page-sidebar.scroll").mCustomScrollbar("disable",true);
     }
     
     $(".x-navigation li.active").removeClass("active");
@@ -547,11 +549,11 @@ function onresize(timeout){
 
 /* PLAY SOUND FUNCTION */
 function playAudio(file){
-    if(file === 'alert')
+    /*if(file === 'alert')
         document.getElementById('audio-alert').play();
 
     if(file === 'fail')
-        document.getElementById('audio-fail').play();    
+        document.getElementById('audio-fail').play(); */   
 }
 /* END PLAY SOUND FUNCTION */
 

@@ -63,6 +63,7 @@ export default class LanguageListComponent extends Component {
     render() {
         return (
             <>
+            <p>{this.props.match.params.message}</p>
             <div>
              <button type="button" style={{ marginLeft: '-999px' }} onClick={this.addNewLanguage}>{myConst.ADD_NEW_LANGUAGE_TITLE}</button><br /><br />
             </div>  
@@ -82,7 +83,7 @@ export default class LanguageListComponent extends Component {
 
                                     <tr key={language.languageId} onClick={() => this.editLanguage(language)}>
                                         <td>{language.languageName}</td>
-                                        <td>{language.active.toString()}</td>
+                                        <td>{language.active.toString() == "true" ? "Active" : "Disabled"}</td>
                                     </tr>
                                 )
 

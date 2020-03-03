@@ -3,7 +3,6 @@ import $ from 'jquery';
 import '../../Js/validation.js';
 import 'jquery-validation';
 import UserService from '../../api/UserService'
-import AuthenticationService from '../common/AuthenticationService.js';
 import { Online } from "react-detect-offline";
 
 export default class ForgotPasswordComponent extends Component {
@@ -34,15 +33,59 @@ export default class ForgotPasswordComponent extends Component {
 
     render() {
         return (
-            <div className="login">
-                <form name="form1" id="form1">
-                    <h3>Forgot Password</h3>
-                    Username : <input type="text" id="username" name="username" /><br></br><br></br>
-                    <Online><button type="button" onClick={this.submitClicked}>Submit</button></Online>
-                    <Online><button type="button" onClick={this.cancelClicked}>Cancel</button><br></br><br></br></Online>
-                    <div><h5>{this.state.message}</h5></div>
-                </form>
+
+            <div className="page-content-wrap">
+
+    <div className="row">
+        <div className="">
+            <ul class="breadcrumb">
+
+            </ul>
+        </div>
+
+        <div className="col-md-6 col-md-offset-3">
+            <div className="login mt-2">
+                <div className="panel panel-default">
+                    <div className="panel-heading">
+                        <h3 className="panel-title">Forgot Password</h3>
+                    </div>
+                    <div className="panel-body">
+                        <div className="col-md-8 col-md-offset-2">
+                            <div className="block login">
+
+                                <form className="form-horizontal"name="form1" id="form1">
+                                    <div className="form-group">
+                                        <label className="col-md-4 control-label">  Username :</label>
+                                        <div className="col-md-8">
+                                            <input type="text" id="username" name="username" className="form-control"></input>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h5>{this.state.message}</h5></div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className="panel-footer">
+
+                        <Online>
+                            <button onClick={this.cancelClicked} type="button" className="btn btn-primary pull-right ml-1">cancel</button>
+                        </Online>
+                        <Online>
+                            <button onClick={this.submitClicked} type="button" className="btn btn-success pull-right">Submit</button>
+                        </Online>
+
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+</div>
+
+            
+    
         )
     }
 
